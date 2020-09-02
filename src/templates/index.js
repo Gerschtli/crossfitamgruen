@@ -3,23 +3,27 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
-import HtmlContent from '../components/HtmlContent'
+import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 
-export const IndexTemplate = ({ title, description, html }) => (
-  <>
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-    </Helmet>
-    <HtmlContent content={html} />
-  </>
-)
+export const IndexTemplate = ({ title, description, content, isPreview }) => {
+  const ContentComponent = isPreview ? Content : HTMLContent
+  return (
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <ContentComponent content={content} />
+    </>
+  )
+}
 
 IndexTemplate.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  html: PropTypes.string,
+  content: PropTypes.node,
+  isPreview: PropTypes.bool,
 }
 
 const IndexPage = ({ data }) => {
@@ -30,7 +34,8 @@ const IndexPage = ({ data }) => {
       <IndexTemplate
         title={frontmatter.title}
         description={frontmatter.description}
-        html={html}
+        content={html}
+        isPreview={false}
       />
     </Layout>
   )
@@ -40,7 +45,7 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
-      html: PropTypes.string,
+      html: PropTypes.node,
     }),
   }),
 }
