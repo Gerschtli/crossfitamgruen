@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "gatsby-cli": "2.14.1",
-    "netlify-cli": "2.69.0",
+    "netlify-cli": "2.69.6",
     "prettier": "2.2.1"
   }
 }
