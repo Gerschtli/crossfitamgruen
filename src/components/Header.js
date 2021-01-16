@@ -65,12 +65,11 @@ const Header = () => {
   return (
     <Navigation>
       <Logo>
-        <object
-          data={logo}
-          type={'image/svg+xml'}
+        <img
+          src={logo}
           height={logoSize}
           width={logoSize}
-          aria-label={'Logo'}
+          alt={'Logo'}
         />
       </Logo>
       <Title>
