@@ -1,8 +1,9 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Header from './Header'
 import { normalize } from 'styled-normalize'
 import { createGlobalStyle } from 'styled-components'
+
+import Header from './Header'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -21,6 +22,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Helmet>
         <html lang="de" />
+        <meta name="ROBOTS" content="NOINDEX,NOFOLLOW" />
       </Helmet>
       <Header />
       {children}
