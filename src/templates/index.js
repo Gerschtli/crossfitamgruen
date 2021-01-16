@@ -1,20 +1,29 @@
-import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
+import React from 'react'
+import 'react-slideshow-image/dist/styles.css'
 
-import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
+import imgSlider1 from '../img/slider1.jpg'
+import imgSlider2 from '../img/slider2.jpg'
+import IndexSlider from '../components/IndexSlider'
 
 export const IndexTemplate = ({ title, description, content, isPreview }) => {
-  const ContentComponent = isPreview ? Content : HTMLContent
+  // const ContentComponent = isPreview ? Content : HTMLContent
   return (
     <>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <ContentComponent content={content} />
+      <IndexSlider
+        items={[
+          { image: imgSlider1, text: 'Tolle Box' },
+          { image: imgSlider2, text: 'Noch ein Text' },
+        ]}
+      />
+      {/*<ContentComponent content={content} />*/}
     </>
   )
 }
