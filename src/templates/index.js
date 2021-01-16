@@ -5,11 +5,9 @@ import React from 'react'
 import 'react-slideshow-image/dist/styles.css'
 
 import Layout from '../components/Layout'
-import imgSlider1 from '../img/slider1.jpg'
-import imgSlider2 from '../img/slider2.jpg'
 import IndexSlider from '../components/IndexSlider'
 
-export const IndexTemplate = ({ title, description, content, isPreview }) => {
+export const IndexTemplate = ({ title, description, slider, content, isPreview }) => {
   // const ContentComponent = isPreview ? Content : HTMLContent
   return (
     <>
@@ -18,10 +16,7 @@ export const IndexTemplate = ({ title, description, content, isPreview }) => {
         <meta name="description" content={description} />
       </Helmet>
       <IndexSlider
-        items={[
-          { image: imgSlider1, text: 'Tolle Box' },
-          { image: imgSlider2, text: 'Noch ein Text' },
-        ]}
+        items={slider}
       />
       {/*<ContentComponent content={content} />*/}
     </>
@@ -31,6 +26,10 @@ export const IndexTemplate = ({ title, description, content, isPreview }) => {
 IndexTemplate.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  slider: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string,
+    text: PropTypes.string,
+  })),
   content: PropTypes.node,
   isPreview: PropTypes.bool,
 }
@@ -43,6 +42,7 @@ const IndexPage = ({ data }) => {
       <IndexTemplate
         title={frontmatter.title}
         description={frontmatter.description}
+        slider={frontmatter.slider}
         content={html}
         isPreview={false}
       />
@@ -67,6 +67,10 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        slider {
+          text
+          image
+        }
       }
       html
     }

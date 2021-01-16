@@ -11,6 +11,7 @@ const IndexPreview = ({ entry, widgetFor }) => {
       <IndexTemplate
         title={data.title}
         description={data.description}
+        slider={data.slider}
         content={widgetFor('body')}
         isPreview={true}
       />

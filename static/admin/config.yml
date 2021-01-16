@@ -28,13 +28,14 @@ collections:
           - label: Slider
             name: slider
             widget: list
+            summary: '{{fields.text}}'
             fields:
-              - label: Image
-                name: image
-                widget: image
               - label: Text
                 name: text
                 widget: string
+              - label: Image
+                name: image
+                widget: image
 
           - label: Body
             name: body
