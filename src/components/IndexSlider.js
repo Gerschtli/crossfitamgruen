@@ -5,41 +5,40 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/all'
 
 import { COLORS } from '../util/colors'
 
+const Outer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+`
+const Inner = styled.div`
+  text-align: center;
+`
+const Text = styled.div`
+  margin-bottom: 1em;
+  color: ${COLORS.light};
+  font-size: 1.8em;
+  font-weight: bold;
+  text-shadow: 0 0 0.3em ${COLORS.shadow};
+`
+const Button = styled.button`
+  border: 1px solid ${COLORS.primary.dark};
+  padding: 0.5em 1em;
+  background-color: ${COLORS.primary.default};
+  color: ${COLORS.light};
+  font-size: 1.2em;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: ${COLORS.primary.dark};
+  }
+`
+
 const CarouselItem = ({ image, text }) => {
-  const Outer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    background-image: url(${image});
-  `
-  const Inner = styled.div`
-    text-align: center;
-  `
-  const Text = styled.div`
-    margin-bottom: 1em;
-    color: ${COLORS.light};
-    font-size: 1.8em;
-    font-weight: bold;
-    text-shadow: 0 0 0.3em ${COLORS.shadow};
-  `
-  const Button = styled.button`
-    border: 1px solid ${COLORS.primary.dark};
-    padding: 0.5em 1em;
-    background-color: ${COLORS.primary.default};
-    color: ${COLORS.light};
-    font-size: 1.2em;
-    text-transform: uppercase;
-
-    &:hover {
-      background-color: ${COLORS.primary.dark};
-    }
-  `
-
   return (
-    <Outer>
+    <Outer style={{ backgroundImage: `url(${image})` }}>
       <Inner>
         <Text>{text}</Text>
         <Button>Kontakt</Button>
