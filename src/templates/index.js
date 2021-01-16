@@ -14,9 +14,7 @@ export const IndexTemplate = ({ title, description, slider }) => {
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <IndexSlider
-        items={slider}
-      />
+      <IndexSlider items={slider} />
     </>
   )
 }
@@ -24,10 +22,12 @@ export const IndexTemplate = ({ title, description, slider }) => {
 IndexTemplate.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  slider: PropTypes.arrayOf(PropTypes.shape({
-    image: PropTypes.string,
-    text: PropTypes.string,
-  })),
+  slider: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.string,
+      text: PropTypes.string,
+    })
+  ),
 }
 
 const IndexPage = ({ data }) => {

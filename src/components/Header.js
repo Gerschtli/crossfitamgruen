@@ -44,19 +44,19 @@ const DesktopSuffix = styled.span`
 
   @media (min-width: ${BREAKPOINTS.sm}) {
     display: block;
-    margin-top: .2em;
-    font-size: .7em;
+    margin-top: 0.2em;
+    font-size: 0.7em;
   }
 
   @media (min-width: ${BREAKPOINTS.md}) {
     display: inline;
     margin-top: 0;
-    margin-left: .3em;
-    font-size: .8em;
+    margin-left: 0.3em;
+    font-size: 0.8em;
 
     &::before {
-      margin-right: .3em;
-      content: "–";
+      margin-right: 0.3em;
+      content: '–';
     }
   }
 `
@@ -65,12 +65,7 @@ const Header = () => {
   return (
     <Navigation>
       <Logo>
-        <img
-          src={logo}
-          height={logoSize}
-          width={logoSize}
-          alt={'Logo'}
-        />
+        <img src={logo} height={logoSize} width={logoSize} alt={'Logo'} />
       </Logo>
       <Title>
         <strong>CrossFit am Grün</strong>

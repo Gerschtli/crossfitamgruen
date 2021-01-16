@@ -105,7 +105,9 @@ const IndexSlider = ({ items }) => {
       prevArrow={<PrevArrow slideRef={slideRef} />}
       nextArrow={<NextArrow slideRef={slideRef} />}
     >
-      {items.map(item => <CarouselItem image={item.image} text={item.text} />)}
+      {items.map((item) => (
+        <CarouselItem image={item.image} text={item.text} />
+      ))}
     </Slide>
   )
 }
