@@ -29,6 +29,8 @@ collections:
             name: slider
             widget: list
             summary: '{{fields.text}}'
+            min: 1
+            label_singular: Slider Item
             fields:
               - label: Text
                 name: text
