@@ -7,8 +7,7 @@ import 'react-slideshow-image/dist/styles.css'
 import Layout from '../components/Layout'
 import IndexSlider from '../components/IndexSlider'
 
-export const IndexTemplate = ({ title, description, slider, content, isPreview }) => {
-  // const ContentComponent = isPreview ? Content : HTMLContent
+export const IndexTemplate = ({ title, description, slider }) => {
   return (
     <>
       <Helmet>
@@ -18,7 +17,6 @@ export const IndexTemplate = ({ title, description, slider, content, isPreview }
       <IndexSlider
         items={slider}
       />
-      {/*<ContentComponent content={content} />*/}
     </>
   )
 }
@@ -30,12 +28,10 @@ IndexTemplate.propTypes = {
     image: PropTypes.string,
     text: PropTypes.string,
   })),
-  content: PropTypes.node,
-  isPreview: PropTypes.bool,
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter, html } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
 
   return (
     <Layout>
@@ -43,8 +39,6 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         description={frontmatter.description}
         slider={frontmatter.slider}
-        content={html}
-        isPreview={false}
       />
     </Layout>
   )
@@ -54,7 +48,6 @@ IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
-      html: PropTypes.node,
     }),
   }),
 }
@@ -72,7 +65,6 @@ export const pageQuery = graphql`
           image
         }
       }
-      html
     }
   }
 `

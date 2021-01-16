@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { IndexTemplate } from '../../templates/index'
 import Layout from '../../components/Layout'
 
-const IndexPreview = ({ entry, widgetFor }) => {
+const IndexPreview = ({ entry }) => {
   const data = entry.getIn(['data']).toJS()
 
   return (
@@ -12,8 +12,6 @@ const IndexPreview = ({ entry, widgetFor }) => {
         title={data.title}
         description={data.description}
         slider={data.slider}
-        content={widgetFor('body')}
-        isPreview={true}
       />
     </Layout>
   )
@@ -23,7 +21,6 @@ IndexPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-  widgetFor: PropTypes.func,
 }
 
 export default IndexPreview
