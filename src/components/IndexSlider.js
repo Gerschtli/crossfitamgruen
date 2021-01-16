@@ -30,6 +30,7 @@ const Button = styled.button`
   color: ${COLORS.light};
   font-size: 1.2em;
   text-transform: uppercase;
+  cursor: pointer;
 
   &:hover {
     background-color: ${COLORS.primary.dark};
@@ -56,6 +57,7 @@ const arrowWrapperCommon = css`
   width: 60px;
   color: ${COLORS.light};
   font-size: 4em;
+  cursor: pointer;
 `
 
 const PrevArrow = ({ slideRef }) => {
