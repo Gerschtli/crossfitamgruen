@@ -1,17 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { IndexTemplate } from '../../templates/index'
+import Layout from '../../components/Layout'
 
 const IndexPreview = ({ entry, widgetFor }) => {
   const data = entry.getIn(['data']).toJS()
 
   return (
-    <IndexTemplate
-      title={data.title}
-      description={data.description}
-      content={widgetFor('body')}
-      isPreview={true}
-    />
+    <Layout>
+      <IndexTemplate
+        title={data.title}
+        description={data.description}
+        content={widgetFor('body')}
+        isPreview={true}
+      />
+    </Layout>
   )
 }
 
