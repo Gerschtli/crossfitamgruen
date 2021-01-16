@@ -1,28 +1,64 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+
 import logo from '../img/logo.svg'
+import { BREAKPOINTS } from '../util/breakpoints'
+import { COLORS } from '../util/colors'
 
 const Navigation = styled.nav`
+  position: relative;
+  z-index: 1;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 -8px 16px 2px rgba(0, 0, 0, 0.4);
-`
+  padding: 8px 12px;
+  box-shadow: 0 -8px 16px 2px ${COLORS.shadow};
 
-const commonElement = css`
-  margin: 8px 16px;
+  @media (min-width: 480px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 `
 
 const logoSize = 80
 
 const Logo = styled.div`
-  ${commonElement}
+  margin-right: 12px;
   height: ${logoSize}px;
   width: ${logoSize}px;
+
+  @media (min-width: ${BREAKPOINTS.sm}) {
+    margin-right: 24px;
+  }
 `
 
-const Links = styled.div`
-  ${commonElement}
+const Title = styled.div`
+  font-size: 1.4em;
+
+  @media (min-width: ${BREAKPOINTS.sm}) {
+    font-size: 1.8em;
+  }
+`
+
+const DesktopSuffix = styled.span`
+  display: none;
+
+  @media (min-width: ${BREAKPOINTS.sm}) {
+    display: block;
+    margin-top: .2em;
+    font-size: .7em;
+  }
+
+  @media (min-width: ${BREAKPOINTS.md}) {
+    display: inline;
+    margin-top: 0;
+    margin-left: .3em;
+    font-size: .8em;
+
+    &::before {
+      margin-right: .3em;
+      content: "–";
+    }
+  }
 `
 
 const Header = () => {
@@ -37,7 +73,10 @@ const Header = () => {
           aria-label={'Logo'}
         />
       </Logo>
-      <Links>links</Links>
+      <Title>
+        <strong>CrossFit am Grün</strong>
+        <DesktopSuffix>CrossFit / Community / Coaching</DesktopSuffix>
+      </Title>
     </Navigation>
   )
 }
