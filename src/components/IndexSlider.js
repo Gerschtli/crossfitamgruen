@@ -6,6 +6,11 @@ import BackgroundImage from 'gatsby-background-image'
 
 import { COLORS } from '../util/colors'
 
+const sliderHeight = css`
+  height: 80vh;
+  max-height: 800px;
+`
+
 const Inner = styled.div`
   text-align: center;
 `
@@ -41,11 +46,11 @@ const CarouselItem = ({ className, image, text }) => {
   )
 }
 const StyledCarouselItem = styled(CarouselItem)`
+  ${sliderHeight}
+
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  max-height: 800px;
   width: 100vw;
   background-size: cover;
   background-position: center;
@@ -95,11 +100,12 @@ const NextArrow = ({ slideRef }) => {
   )
 }
 
-const IndexSlider = ({ items }) => {
+const IndexSliderComponent = ({ className, items }) => {
   const slideRef = useRef()
 
   return (
     <Slide
+      class={className}
       ref={slideRef}
       easing="ease"
       autoplay={false}
@@ -112,5 +118,11 @@ const IndexSlider = ({ items }) => {
     </Slide>
   )
 }
+
+const IndexSlider = styled(IndexSliderComponent)`
+  ${sliderHeight}
+
+  overflow: hidden;
+`
 
 export default IndexSlider
