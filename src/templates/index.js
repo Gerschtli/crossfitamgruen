@@ -24,9 +24,9 @@ IndexTemplate.propTypes = {
   description: PropTypes.string,
   slider: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PropTypes.string,
+      image: PropTypes.object,
       text: PropTypes.string,
-    })
+    }),
   ),
 }
 
@@ -56,13 +56,19 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index" } }) {
+    markdownRemark(frontmatter: {templateKey: {eq: "index"}}) {
       frontmatter {
         title
         description
         slider {
           text
-          image
+          image {
+            childImageSharp {
+              fluid(quality: 90, maxWidth: 1920) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
         }
       }
     }

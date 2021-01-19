@@ -2,17 +2,10 @@ import { Slide } from 'react-slideshow-image'
 import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/all'
+import BackgroundImage from 'gatsby-background-image'
 
 import { COLORS } from '../util/colors'
 
-const Outer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  background-size: cover;
-  background-position: center;
-`
 const Inner = styled.div`
   text-align: center;
 `
@@ -37,16 +30,26 @@ const Button = styled.button`
   }
 `
 
-const CarouselItem = ({ image, text }) => {
+const CarouselItem = ({ className, image, text }) => {
   return (
-    <Outer style={{ backgroundImage: `url(${image})` }}>
+    <BackgroundImage className={className} fluid={image.childImageSharp.fluid}>
       <Inner>
         <Text>{text}</Text>
         <Button>Kontakt</Button>
       </Inner>
-    </Outer>
+    </BackgroundImage>
   )
 }
+const StyledCarouselItem = styled(CarouselItem)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  max-height: 800px;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+`
 
 const arrowWrapperCommon = css`
   display: flex;
