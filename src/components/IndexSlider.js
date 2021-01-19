@@ -59,38 +59,36 @@ const arrowWrapperCommon = css`
   font-size: 4em;
   cursor: pointer;
 `
+const NextArrowWrapper = styled.span`
+  ${arrowWrapperCommon}
+  margin-left: -60px;
+`
+const PrevArrowWrapper = styled.span`
+  ${arrowWrapperCommon}
+  margin-right: -60px;
+`
 
 const PrevArrow = ({ slideRef }) => {
-  const Wrapper = styled.span`
-    ${arrowWrapperCommon}
-    margin-right: -60px;
-  `
-
   const action = () => {
     slideRef.current.goBack()
   }
 
   return (
-    <Wrapper onClick={action}>
+    <PrevArrowWrapper onClick={action}>
       <MdKeyboardArrowLeft />
-    </Wrapper>
+    </PrevArrowWrapper>
   )
 }
 
 const NextArrow = ({ slideRef }) => {
-  const Wrapper = styled.span`
-    ${arrowWrapperCommon}
-    margin-left: -60px;
-  `
-
   const action = () => {
     slideRef.current.goNext()
   }
 
   return (
-    <Wrapper onClick={action}>
+    <NextArrowWrapper onClick={action}>
       <MdKeyboardArrowRight />
-    </Wrapper>
+    </NextArrowWrapper>
   )
 }
 
@@ -105,8 +103,8 @@ const IndexSlider = ({ items }) => {
       prevArrow={<PrevArrow slideRef={slideRef} />}
       nextArrow={<NextArrow slideRef={slideRef} />}
     >
-      {items.map((item) => (
-        <CarouselItem image={item.image} text={item.text} />
+      {items.map((item, index) => (
+        <StyledCarouselItem key={index} image={item.image} text={item.text} />
       ))}
     </Slide>
   )
