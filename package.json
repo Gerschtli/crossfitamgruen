@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^2.30.3",
+    "gatsby": "^2.31.0",
     "gatsby-background-image": "^1.4.0",
     "gatsby-plugin-netlify": "^2.10.0",
     "gatsby-plugin-netlify-cache": "^1.2.0",
@@ -46,9 +46,9 @@
     "upgrade": "ncu -u"
   },
   "devDependencies": {
-    "gatsby-cli": "^2.17.1",
+    "gatsby-cli": "^2.18.0",
     "http-server": "^0.12.3",
-    "netlify-cli": "^2.71.0",
+    "netlify-cli": "^3.2.3",
     "npm-check-updates": "^10.2.5",
     "prettier": "^2.2.1"
   }
