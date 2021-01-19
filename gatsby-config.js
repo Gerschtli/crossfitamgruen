@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    'gatsby-plugin-preact',
     'gatsby-plugin-netlify-cache',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
