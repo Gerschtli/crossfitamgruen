@@ -1,4 +1,9 @@
 module.exports = {
+  flags: {
+    FAST_REFRESH: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   plugins: [
     'gatsby-plugin-preact',
     'gatsby-plugin-netlify-cache',
