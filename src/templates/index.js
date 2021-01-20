@@ -4,6 +4,7 @@ import React from 'react'
 
 import Layout from '../components/Layout'
 import IndexSlider from '../components/IndexSlider'
+import IndexInfoBoxes from '../components/IndexInfoBoxes'
 
 const IndexPage = ({ data, entry }) => {
   // data is not set in preview mode
@@ -18,6 +19,7 @@ const IndexPage = ({ data, entry }) => {
         <meta name="description" content={dataSet.description} />
       </Helmet>
       <IndexSlider items={dataSet.slider} />
+      <IndexInfoBoxes items={dataSet.infoBoxes} />
     </Layout>
   )
 }
@@ -35,7 +37,17 @@ export const pageQuery = graphql`
           image {
             childImageSharp {
               fluid(quality: 90, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+        infoBoxes {
+          text
+          image {
+            childImageSharp {
+              fixed(quality: 90, width: 100) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
               }
             }
           }
