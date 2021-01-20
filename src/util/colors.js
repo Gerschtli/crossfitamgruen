@@ -8,5 +8,8 @@ export const COLORS = {
   },
   dark: 'rgb(39,39,39)',
   light: 'rgb(255,255,255)',
-  shadow: 'rgba(0,0,0,0.87)',
+  shadow: {
+    dark: 'rgba(0,0,0,0.87)',
+    light: 'rgba(0,0,0,0.2)',
+  },
 }

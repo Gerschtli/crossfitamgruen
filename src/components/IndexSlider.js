@@ -20,7 +20,7 @@ const Text = styled.div`
   color: ${COLORS.light};
   font-size: 1.8em;
   font-weight: bold;
-  text-shadow: 0 0 0.3em ${COLORS.shadow};
+  text-shadow: 0 0 0.3em ${COLORS.shadow.dark};
 `
 const Button = styled.button`
   border: 1px solid ${COLORS.primary.dark};

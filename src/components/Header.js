@@ -11,7 +11,7 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  box-shadow: 0 -8px 16px 2px ${COLORS.shadow};
+  box-shadow: 0 -8px 16px 2px ${COLORS.shadow.dark};
 
   @media (min-width: 480px) {
     padding-left: 24px;
