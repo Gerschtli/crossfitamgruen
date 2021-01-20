@@ -26,15 +26,29 @@ collections:
             widget: string
 
           - label: Slider
+            label_singular: Slider item
             name: slider
             widget: list
             summary: '{{fields.text}}'
-            min: 1
-            label_singular: Slider Item
+            min: 2
             fields:
               - label: Text
                 name: text
                 widget: string
+              - label: Image
+                name: image
+                widget: image
+
+          - label: Info boxes
+            label_singular: Info box
+            name: infoBoxes
+            widget: list
+            summary: '{{fields.text}}'
+            min: 2
+            fields:
+              - label: Text
+                name: text
+                widget: text
               - label: Image
                 name: image
                 widget: image
