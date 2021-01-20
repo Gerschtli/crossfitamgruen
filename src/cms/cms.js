@@ -1,6 +1,6 @@
 import CMS from 'netlify-cms-app'
 
-import IndexPreview from './preview-templates/IndexPreview'
 import withStyledComponentsRendered from '../util/withStyledComponentsRendered'
+import IndexPage from '../templates'
 
-CMS.registerPreviewTemplate('index', withStyledComponentsRendered(IndexPreview))
+CMS.registerPreviewTemplate('index', withStyledComponentsRendered(IndexPage))

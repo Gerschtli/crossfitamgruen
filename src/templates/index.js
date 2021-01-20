@@ -7,7 +7,7 @@ import 'react-slideshow-image/dist/styles.css'
 import Layout from '../components/Layout'
 import IndexSlider from '../components/IndexSlider'
 
-export const IndexTemplate = ({ title, description, slider }) => {
+const IndexTemplate = ({ title, description, slider }) => {
   return (
     <>
       <Helmet>
@@ -30,15 +30,18 @@ IndexTemplate.propTypes = {
   ),
 }
 
-const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+const IndexPage = ({ data, entry }) => {
+  // data is not set in preview mode
+  let dataSet = data
+    ? data.markdownRemark.frontmatter
+    : entry.getIn(['data']).toJS()
 
   return (
     <Layout>
       <IndexTemplate
-        title={frontmatter.title}
-        description={frontmatter.description}
-        slider={frontmatter.slider}
+        title={dataSet.title}
+        description={dataSet.description}
+        slider={dataSet.slider}
       />
     </Layout>
   )
