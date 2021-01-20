@@ -1,7 +1,6 @@
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import React from 'react'
-import 'react-slideshow-image/dist/styles.css'
 
 import Layout from '../components/Layout'
 import IndexSlider from '../components/IndexSlider'

@@ -2,6 +2,7 @@ import { Slide } from 'react-slideshow-image'
 import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/all'
+import 'react-slideshow-image/dist/styles.css'
 
 import { COLORS } from '../util/colors'
 import BackgroundImage from './BackgroundImage'
