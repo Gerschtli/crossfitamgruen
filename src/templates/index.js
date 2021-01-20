@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import React from 'react'
@@ -6,29 +5,6 @@ import 'react-slideshow-image/dist/styles.css'
 
 import Layout from '../components/Layout'
 import IndexSlider from '../components/IndexSlider'
-
-const IndexTemplate = ({ title, description, slider }) => {
-  return (
-    <>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Helmet>
-      <IndexSlider items={slider} />
-    </>
-  )
-}
-
-IndexTemplate.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  slider: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.object,
-      text: PropTypes.string,
-    }),
-  ),
-}
 
 const IndexPage = ({ data, entry }) => {
   // data is not set in preview mode
@@ -38,21 +14,13 @@ const IndexPage = ({ data, entry }) => {
 
   return (
     <Layout>
-      <IndexTemplate
-        title={dataSet.title}
-        description={dataSet.description}
-        slider={dataSet.slider}
-      />
+      <Helmet>
+        <title>{dataSet.title}</title>
+        <meta name="description" content={dataSet.description} />
+      </Helmet>
+      <IndexSlider items={dataSet.slider} />
     </Layout>
   )
-}
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
 }
 
 export default IndexPage
