@@ -2,9 +2,9 @@ import { Slide } from 'react-slideshow-image'
 import React, { useRef } from 'react'
 import styled, { css } from 'styled-components'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/all'
-import BackgroundImage from 'gatsby-background-image'
 
 import { COLORS } from '../util/colors'
+import BackgroundImage from './BackgroundImage'
 
 const sliderHeight = css`
   height: 80vh;
@@ -37,7 +37,7 @@ const Button = styled.button`
 
 const CarouselItem = ({ className, image, text }) => {
   return (
-    <BackgroundImage className={className} fluid={image.childImageSharp.fluid}>
+    <BackgroundImage className={className} image={image}>
       <Inner>
         <Text>{text}</Text>
         <Button>Kontakt</Button>
