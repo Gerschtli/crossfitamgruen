@@ -52,3 +52,34 @@ collections:
               - label: Image
                 name: image
                 widget: image
+
+      - file: src/pages/datenschutz.md
+        label: Disclosure
+        name: disclosure
+        fields:
+          - label: Template Key
+            name: templateKey
+            widget: hidden
+
+          - label: Title
+            name: title
+            widget: string
+
+          - label: Description
+            name: description
+            widget: string
+
+          - label: Body
+            name: body
+            widget: markdown
+            buttons:
+              - bold
+              - italic
+              - link
+              - heading-one
+              - heading-two
+              - heading-three
+              - bulleted-list
+              - numbered-list
+            editor_components:
+              - image
