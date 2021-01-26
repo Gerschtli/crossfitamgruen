@@ -2,11 +2,11 @@ import React from 'react'
 
 const Content = ({ content, className, isPreview }) => {
   if (isPreview) {
-    return <div className={className}>{content}</div>
+    return <main className={className}>{content}</main>
   }
 
   return (
-    <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+    <main className={className} dangerouslySetInnerHTML={{ __html: content }} />
   )
 }
 

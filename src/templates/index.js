@@ -13,8 +13,10 @@ const IndexPage = ({ data, entry }) => {
 
   return (
     <Layout title={dataSet.title} description={dataSet.description}>
-      <IndexSlider items={dataSet.slider} />
-      <IndexInfoBoxes items={dataSet.infoBoxes} />
+      <main>
+        <IndexSlider items={dataSet.slider} />
+        <IndexInfoBoxes items={dataSet.infoBoxes} />
+      </main>
     </Layout>
   )
 }
