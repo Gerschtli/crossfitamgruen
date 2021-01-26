@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import React from 'react'
 
@@ -13,11 +12,7 @@ const IndexPage = ({ data, entry }) => {
     : entry.getIn(['data']).toJS()
 
   return (
-    <Layout>
-      <Helmet>
-        <title>{dataSet.title}</title>
-        <meta name="description" content={dataSet.description} />
-      </Helmet>
+    <Layout title={dataSet.title} description={dataSet.description}>
       <IndexSlider items={dataSet.slider} />
       <IndexInfoBoxes items={dataSet.infoBoxes} />
     </Layout>

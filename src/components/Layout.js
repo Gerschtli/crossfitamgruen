@@ -16,13 +16,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title, description }) => {
   return (
     <>
       <Normalize />
       <GlobalStyle />
       <Helmet>
         <html lang="de" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="ROBOTS" content="NOINDEX,NOFOLLOW" />
         <link
           rel="apple-touch-icon"
