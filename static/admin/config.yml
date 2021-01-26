@@ -6,12 +6,12 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: pages
+    label: Pages
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
+      - file: src/pages/index.md
+        label: Landing Page
+        name: index
         fields:
           - label: Template Key
             name: templateKey
@@ -29,7 +29,7 @@ collections:
             label_singular: Slider item
             name: slider
             widget: list
-            summary: '{{fields.text}}'
+            summary: "{{fields.text}}"
             min: 2
             fields:
               - label: Text
@@ -43,7 +43,7 @@ collections:
             label_singular: Info box
             name: infoBoxes
             widget: list
-            summary: '{{fields.text}}'
+            summary: "{{fields.text}}"
             min: 2
             fields:
               - label: Text
