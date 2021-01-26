@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import logo from '../img/logo.svg'
@@ -20,7 +21,8 @@ const StyledNavigation = styled.nav`
     padding-right: 1.5em;
   }
 `
-const StyledLogo = styled.div`
+const StyledLogoLink = styled(Link)`
+  display: block;
   margin-right: 0.75em;
   height: ${logoSize}px;
   width: ${logoSize}px;
@@ -60,9 +62,9 @@ const StyledDesktopSuffix = styled.span`
 
 const Header = () => (
   <StyledNavigation>
-    <StyledLogo>
+    <StyledLogoLink to={'/'}>
       <img src={logo} height={logoSize} width={logoSize} alt={'Logo'} />
-    </StyledLogo>
+    </StyledLogoLink>
     <StyledTitle>
       <strong>CrossFit am Grün</strong>
       <StyledDesktopSuffix>CrossFit / Community / Coaching</StyledDesktopSuffix>
