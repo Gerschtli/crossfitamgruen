@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
-import { breakpoints } from "../util/breakpoints";
+import { breakpoints } from '../util/breakpoints'
 
 const StyledContent = styled.main`
   margin: 0 auto;
@@ -11,7 +11,7 @@ const StyledContent = styled.main`
 `
 
 const NotFoundPage = () => {
-  const title = "Seite nicht gefunden";
+  const title = 'Seite nicht gefunden'
 
   return (
     <Layout title={title} description={title}>

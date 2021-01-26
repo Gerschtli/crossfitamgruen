@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import Content from '../components/Content'
-import { breakpoints } from "../util/breakpoints";
+import { breakpoints } from '../util/breakpoints'
 
 const StyledContent = styled(Content)`
   margin: 0 auto;
@@ -45,9 +45,7 @@ const DisclosurePage = ({ data, entry, widgetFor }) => {
     ? data.markdownRemark.frontmatter
     : entry.getIn(['data']).toJS()
 
-  const html = data
-    ? data.markdownRemark.html
-    : widgetFor('body')
+  const html = data ? data.markdownRemark.html : widgetFor('body')
 
   return (
     <Layout title={dataSet.title} description={dataSet.description}>
