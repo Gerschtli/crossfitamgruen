@@ -4,6 +4,7 @@ import { Normalize } from 'styled-normalize'
 import { createGlobalStyle } from 'styled-components'
 
 import Header from './Header'
+import Footer from './Footer'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -52,6 +53,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header />
       {children}
+      <Footer />
     </>
   )
 }
