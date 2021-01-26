@@ -1,12 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { normalize } from 'styled-normalize'
+import { Normalize } from 'styled-normalize'
 import { createGlobalStyle } from 'styled-components'
 
 import Header from './Header'
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize}
   * {
     box-sizing: border-box;
   }
@@ -19,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children }) => {
   return (
     <>
+      <Normalize />
       <GlobalStyle />
       <Helmet>
         <html lang="de" />

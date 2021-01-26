@@ -2,53 +2,50 @@ import React from 'react'
 import styled from 'styled-components'
 
 import logo from '../img/logo.svg'
-import { BREAKPOINTS } from '../util/breakpoints'
-import { COLORS } from '../util/colors'
+import { breakpoints, mediaQuery } from '../util/breakpoints'
+import { colors } from '../util/colors'
 
-const Navigation = styled.nav`
+const logoSize = 80
+
+const StyledNavigation = styled.nav`
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
-  padding: 8px 12px;
-  box-shadow: 0 -8px 16px 2px ${COLORS.shadow.dark};
+  padding: 0.75em 1em;
+  box-shadow: 0 -0.5em 1em 0.1em ${colors.shadow.dark};
 
-  @media (min-width: 480px) {
-    padding-left: 24px;
-    padding-right: 24px;
+  ${mediaQuery(breakpoints.sm)} {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
   }
 `
-
-const logoSize = 80
-
-const Logo = styled.div`
-  margin-right: 12px;
+const StyledLogo = styled.div`
+  margin-right: 0.75em;
   height: ${logoSize}px;
   width: ${logoSize}px;
 
-  @media (min-width: ${BREAKPOINTS.sm}) {
-    margin-right: 24px;
+  ${mediaQuery(breakpoints.sm)} {
+    margin-right: 1.5em;
   }
 `
-
-const Title = styled.div`
+const StyledTitle = styled.div`
   font-size: 1.4em;
 
-  @media (min-width: ${BREAKPOINTS.sm}) {
+  ${mediaQuery(breakpoints.sm)} {
     font-size: 1.8em;
   }
 `
-
-const DesktopSuffix = styled.span`
+const StyledDesktopSuffix = styled.span`
   display: none;
 
-  @media (min-width: ${BREAKPOINTS.sm}) {
+  ${mediaQuery(breakpoints.sm)} {
     display: block;
     margin-top: 0.2em;
     font-size: 0.7em;
   }
 
-  @media (min-width: ${BREAKPOINTS.md}) {
+  ${mediaQuery(breakpoints.md)} {
     display: inline;
     margin-top: 0;
     margin-left: 0.3em;
@@ -61,18 +58,16 @@ const DesktopSuffix = styled.span`
   }
 `
 
-const Header = () => {
-  return (
-    <Navigation>
-      <Logo>
-        <img src={logo} height={logoSize} width={logoSize} alt={'Logo'} />
-      </Logo>
-      <Title>
-        <strong>CrossFit am Grün</strong>
-        <DesktopSuffix>CrossFit / Community / Coaching</DesktopSuffix>
-      </Title>
-    </Navigation>
-  )
-}
+const Header = () => (
+  <StyledNavigation>
+    <StyledLogo>
+      <img src={logo} height={logoSize} width={logoSize} alt={'Logo'} />
+    </StyledLogo>
+    <StyledTitle>
+      <strong>CrossFit am Grün</strong>
+      <StyledDesktopSuffix>CrossFit / Community / Coaching</StyledDesktopSuffix>
+    </StyledTitle>
+  </StyledNavigation>
+)
 
 export default Header

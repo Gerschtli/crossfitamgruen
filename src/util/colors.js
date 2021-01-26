@@ -1,4 +1,4 @@
-export const COLORS = {
+export const colors = {
   primary: {
     default: 'rgb(255,171,31)',
     dark: 'rgb(222,148,25)',
