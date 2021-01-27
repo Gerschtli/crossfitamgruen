@@ -26,7 +26,7 @@ const StyledLink = styled(Link)`
 
 const Footer = () => (
   <StyledFooter>
-    <StyledLink to={'/datenschutz'}>Datenschutz</StyledLink>
+    <StyledLink to={'/datenschutz/'}>Datenschutz</StyledLink>
     <JournalLink />
   </StyledFooter>
 )
