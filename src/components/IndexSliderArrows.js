@@ -17,6 +17,10 @@ const arrowCommon = css`
   color: ${colors.light};
   font-size: 60px;
   cursor: pointer;
+
+  &:hover {
+    color: ${colors.grey.light};
+  }
 `
 const StyledNextArrow = styled.span`
   ${arrowCommon}

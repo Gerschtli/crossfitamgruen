@@ -15,16 +15,19 @@ const StyledText = styled.div`
   text-shadow: 0 0 0.3em ${colors.shadow.dark};
 `
 const StyledButton = styled.button`
-  border: 1px solid ${colors.primary.dark};
+  height: 2.5em;
+  border: 0;
+  border-radius: 2.5em;
   padding: 0.5em 1em;
-  background-color: ${colors.primary.default};
+  background-color: ${colors.accent.light};
   color: ${colors.light};
   font-size: 1.2em;
+  font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
 
   &:hover {
-    background-color: ${colors.primary.dark};
+    background-color: ${colors.accent.dark};
   }
 `
 const CarouselItem = ({ key, className, image, text }) => {

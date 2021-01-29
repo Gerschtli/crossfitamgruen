@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  background-color: ${colors.dark};
+  background-color: ${colors.grey.dark};
 
   ${mediaQuery(breakpoints.sm)} {
     padding-left: 1.5em;
@@ -21,7 +21,7 @@ const StyledFooter = styled.footer`
 const StyledLink = styled(Link)`
   color: ${colors.light};
   text-decoration: none;
-  font-size: .8em;
+  font-size: 0.8em;
 `
 
 const Footer = () => (

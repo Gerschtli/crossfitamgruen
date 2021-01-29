@@ -1,13 +1,14 @@
 export const colors = {
-  primary: {
-    default: 'rgb(255,171,31)',
-    dark: 'rgb(222,148,25)',
+  accent: {
+    light: '#18c47c',
+    dark: '#14A368',
   },
-  secondary: {
-    default: 'rgb(165,208,168)',
+  grey: {
+    light: '#f2f2f2',
+    medium: '#dddddd',
+    dark: '#444444',
   },
-  dark: 'rgb(39,39,39)',
-  light: 'rgb(255,255,255)',
+  light: '#ffffff',
   shadow: {
     dark: 'rgba(0,0,0,0.87)',
     light: 'rgba(0,0,0,0.2)',

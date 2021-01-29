@@ -32,6 +32,7 @@ const StyledLogoLink = styled(Link)`
   }
 `
 const StyledTitle = styled.div`
+  color: ${colors.grey.dark};
   font-size: 1.4em;
 
   ${mediaQuery(breakpoints.sm)} {
