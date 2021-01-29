@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import logo from '../img/logo.svg'
-import { breakpoints, mediaQuery } from '../util/breakpoints'
-import { colors } from '../util/colors'
+import logo from '../../img/logo.svg'
+import { breakpoints, mediaQuery } from '../../util/breakpoints'
+import { colors } from '../../util/colors'
 
 const logoSize = 80
 

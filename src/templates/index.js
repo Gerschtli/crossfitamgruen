@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
-import Layout from '../components/Layout'
-import IndexSlider from '../components/IndexSlider'
-import IndexInfoBoxes from '../components/IndexInfoBoxes'
+import Layout from '../components/base/Layout'
+import Slider from '../components/index/Slider'
+import InfoBoxes from '../components/index/InfoBoxes'
 
 const IndexPage = ({ data, entry }) => {
   // data is not set in preview mode
@@ -14,8 +14,8 @@ const IndexPage = ({ data, entry }) => {
   return (
     <Layout title={dataSet.title} description={dataSet.description}>
       <main>
-        <IndexSlider items={dataSet.slider} />
-        <IndexInfoBoxes items={dataSet.infoBoxes} />
+        <Slider items={dataSet.slider} />
+        <InfoBoxes items={dataSet.infoBoxes} />
       </main>
     </Layout>
   )

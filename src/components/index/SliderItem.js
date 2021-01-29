@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors } from '../util/colors'
-import BackgroundImage from './BackgroundImage'
-import { breakpoints, mediaQuery } from "../util/breakpoints";
+import { colors } from '../../util/colors'
+import BackgroundImage from '../util/BackgroundImage'
+import { breakpoints, mediaQuery } from "../../util/breakpoints";
 
 const StyledInner = styled.div`
   text-align: center;
@@ -41,7 +41,7 @@ const StyledButton = styled.button`
     background-color: ${colors.accent.dark};
   }
 `
-const CarouselItem = ({ key, className, image, text }) => {
+const SliderItem = ({ key, className, image, text }) => {
   let options = {
     className,
     image,
@@ -62,4 +62,4 @@ const CarouselItem = ({ key, className, image, text }) => {
   )
 }
 
-export default CarouselItem
+export default SliderItem

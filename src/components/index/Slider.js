@@ -1,18 +1,18 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import Slider from 'react-slick'
+import { default as SlickSlider } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 
-import CarouselItem from './CarouselItem'
-import { NextArrow, PrevArrow } from './IndexSliderArrows'
+import SliderItem from './SliderItem'
+import { NextArrow, PrevArrow } from './SliderArrows'
 
 const sliderHeight = css`
   height: 75vh;
   max-height: 800px;
 `
 
-const StyledCarouselItem = styled(CarouselItem)`
+const StyledSliderItem = styled(SliderItem)`
   ${sliderHeight}
 
   display: flex;
@@ -20,25 +20,25 @@ const StyledCarouselItem = styled(CarouselItem)`
   justify-content: center;
 `
 
-const IndexSliderComponent = ({ className, items }) => {
+const SliderComponent = ({ className, items }) => {
   return (
-    <Slider
+    <SlickSlider
       className={className}
       prevArrow={<PrevArrow />}
       nextArrow={<NextArrow />}
       lazyLoad={true}
     >
       {items.map((item, index) => (
-        <StyledCarouselItem key={index} image={item.image} text={item.text} />
+        <StyledSliderItem key={index} image={item.image} text={item.text} />
       ))}
-    </Slider>
+    </SlickSlider>
   )
 }
 
-const IndexSlider = styled(IndexSliderComponent)`
+const Slider = styled(SliderComponent)`
   ${sliderHeight}
 
   position: relative;
 `
 
-export default IndexSlider
+export default Slider

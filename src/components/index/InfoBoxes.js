@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Image from '../components/Image'
-import { breakpoints, mediaQuery } from '../util/breakpoints'
-import { colors } from '../util/colors'
+import Image from '../util/Image'
+import { breakpoints, mediaQuery } from '../../util/breakpoints'
+import { colors } from '../../util/colors'
 
 const StyledWrapper = styled.div`
   margin: 0 auto;
@@ -42,7 +42,7 @@ const InfoBox = ({ text, image }) => (
   </StyledItem>
 )
 
-const IndexInfoBoxes = ({ items }) => (
+const InfoBoxes = ({ items }) => (
   <StyledWrapper>
     {items.map((item, key) => (
       <InfoBox key={key} text={item.text} image={item.image} />
@@ -50,4 +50,4 @@ const IndexInfoBoxes = ({ items }) => (
   </StyledWrapper>
 )
 
-export default IndexInfoBoxes
+export default InfoBoxes

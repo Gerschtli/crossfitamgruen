@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import { colors } from '../util/colors'
+import { colors } from '../../util/colors'
 import JournalLink from './JournalLink'
-import { breakpoints, mediaQuery } from '../util/breakpoints'
+import { breakpoints, mediaQuery } from '../../util/breakpoints'
 
 const StyledFooter = styled.footer`
   display: flex;

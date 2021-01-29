@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/all'
 import React from 'react'
 
-import { colors } from '../util/colors'
+import { colors } from '../../util/colors'
 
 const arrowCommon = css`
   position: absolute;
