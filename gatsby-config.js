@@ -30,6 +30,15 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Didact Gothic:400,700`
+        ],
+        display: 'swap'
+      }
+    },
     // Including in your Gatsby plugins will transform any paths in your frontmatter
     `gatsby-plugin-netlify-cms-paths`,
     // Including in your Remark plugins will transform any paths in your markdown body
