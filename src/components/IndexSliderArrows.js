@@ -5,6 +5,9 @@ import React from 'react'
 import { colors } from '../util/colors'
 
 const arrowCommon = css`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,34 +21,22 @@ const arrowCommon = css`
 const StyledNextArrow = styled.span`
   ${arrowCommon}
 
-  margin-left: -60px;
+  right: 0;
 `
 const StyledPrevArrow = styled.span`
   ${arrowCommon}
 
-  margin-right: -60px;
+  left: 0;
 `
 
-export const PrevArrow = ({ slideRef }) => {
-  const action = () => {
-    slideRef.current.goBack()
-  }
+export const PrevArrow = ({ onClick }) => (
+  <StyledPrevArrow onClick={onClick}>
+    <MdKeyboardArrowLeft />
+  </StyledPrevArrow>
+)
 
-  return (
-    <StyledPrevArrow onClick={action}>
-      <MdKeyboardArrowLeft />
-    </StyledPrevArrow>
-  )
-}
-
-export const NextArrow = ({ slideRef }) => {
-  const action = () => {
-    slideRef.current.goNext()
-  }
-
-  return (
-    <StyledNextArrow onClick={action}>
-      <MdKeyboardArrowRight />
-    </StyledNextArrow>
-  )
-}
+export const NextArrow = ({ onClick }) => (
+  <StyledNextArrow onClick={onClick}>
+    <MdKeyboardArrowRight />
+  </StyledNextArrow>
+)

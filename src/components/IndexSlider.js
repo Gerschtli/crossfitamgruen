@@ -1,7 +1,8 @@
-import { Slide } from 'react-slideshow-image'
-import React, { useRef } from 'react'
+import React from 'react'
 import styled, { css } from 'styled-components'
-import 'react-slideshow-image/dist/styles.css'
+
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
 
 import CarouselItem from './CarouselItem'
 import { NextArrow, PrevArrow } from './IndexSliderArrows'
@@ -17,34 +18,26 @@ const StyledCarouselItem = styled(CarouselItem)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
 `
 
 const IndexSliderComponent = ({ className, items }) => {
-  const slideRef = useRef()
-
   return (
-    <Slide
-      class={className}
-      ref={slideRef}
-      easing={'ease'}
-      autoplay={false}
-      prevArrow={<PrevArrow slideRef={slideRef} />}
-      nextArrow={<NextArrow slideRef={slideRef} />}
+    <Slider
+      className={className}
+      prevArrow={<PrevArrow />}
+      nextArrow={<NextArrow />}
     >
       {items.map((item, index) => (
         <StyledCarouselItem key={index} image={item.image} text={item.text} />
       ))}
-    </Slide>
+    </Slider>
   )
 }
 
 const IndexSlider = styled(IndexSliderComponent)`
   ${sliderHeight}
 
-  overflow: hidden;
+  position: relative;
 `
 
 export default IndexSlider
