@@ -30,7 +30,7 @@ const StyledButton = styled.button`
 const CarouselItem = ({ key, className, image, text }) => {
   let options = {
     className,
-    image
+    image,
   }
 
   if (key === 0) {
