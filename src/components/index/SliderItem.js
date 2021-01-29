@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { colors } from '../../util/colors'
 import BackgroundImage from '../util/BackgroundImage'
-import { breakpoints, mediaQuery } from "../../util/breakpoints";
+import { breakpoints, mediaQuery } from '../../util/breakpoints'
 
 const StyledInner = styled.div`
   text-align: center;
