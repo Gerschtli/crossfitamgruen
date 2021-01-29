@@ -18,6 +18,7 @@ const JournalLink = () => {
         width={width}
         height={height}
         alt={title}
+        loading={"lazy"}
       />
     </a>
   )

@@ -27,13 +27,25 @@ const StyledButton = styled.button`
     background-color: ${colors.primary.dark};
   }
 `
-const CarouselItem = ({ className, image, text }) => (
-  <BackgroundImage className={className} image={image}>
-    <StyledInner>
-      <StyledText>{text}</StyledText>
-      <StyledButton>Kontakt</StyledButton>
-    </StyledInner>
-  </BackgroundImage>
-)
+const CarouselItem = ({ key, className, image, text }) => {
+  let options = {
+    className,
+    image
+  }
+
+  if (key === 0) {
+    options.loading = 'eager'
+    options.fadeIn = false
+  }
+
+  return (
+    <BackgroundImage {...options}>
+      <StyledInner>
+        <StyledText>{text}</StyledText>
+        <StyledButton>Kontakt</StyledButton>
+      </StyledInner>
+    </BackgroundImage>
+  )
+}
 
 export default CarouselItem

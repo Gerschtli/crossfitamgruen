@@ -26,6 +26,7 @@ const IndexSliderComponent = ({ className, items }) => {
       className={className}
       prevArrow={<PrevArrow />}
       nextArrow={<NextArrow />}
+      lazyLoad={true}
     >
       {items.map((item, index) => (
         <StyledCarouselItem key={index} image={item.image} text={item.text} />
