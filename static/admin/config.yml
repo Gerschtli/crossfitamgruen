@@ -1,3 +1,35 @@
+fields:
+  - &fieldTemplateKey
+    label: Template Key
+    name: templateKey
+    widget: hidden
+
+  - &fieldTitle
+    label: Title
+    name: title
+    widget: string
+
+  - &fieldDescription
+    label: Description
+    name: description
+    widget: string
+
+  - &fieldBody
+    label: Body
+    name: body
+    widget: markdown
+    buttons:
+      - bold
+      - italic
+      - link
+      - heading-one
+      - heading-two
+      - heading-three
+      - bulleted-list
+      - numbered-list
+    editor_components:
+      - image
+
 backend:
   name: git-gateway
   branch: master
@@ -13,17 +45,9 @@ collections:
         label: Landing Page
         name: index
         fields:
-          - label: Template Key
-            name: templateKey
-            widget: hidden
-
-          - label: Title
-            name: title
-            widget: string
-
-          - label: Description
-            name: description
-            widget: string
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
 
           - label: Slider
             label_singular: Slider item
@@ -57,60 +81,16 @@ collections:
         label: Disclosure
         name: disclosure
         fields:
-          - label: Template Key
-            name: templateKey
-            widget: hidden
-
-          - label: Title
-            name: title
-            widget: string
-
-          - label: Description
-            name: description
-            widget: string
-
-          - label: Body
-            name: body
-            widget: markdown
-            buttons:
-              - bold
-              - italic
-              - link
-              - heading-one
-              - heading-two
-              - heading-three
-              - bulleted-list
-              - numbered-list
-            editor_components:
-              - image
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
 
       - file: src/pages/impressum.md
         label: Imprint
         name: imprint
         fields:
-          - label: Template Key
-            name: templateKey
-            widget: hidden
-
-          - label: Title
-            name: title
-            widget: string
-
-          - label: Description
-            name: description
-            widget: string
-
-          - label: Body
-            name: body
-            widget: markdown
-            buttons:
-              - bold
-              - italic
-              - link
-              - heading-one
-              - heading-two
-              - heading-three
-              - bulleted-list
-              - numbered-list
-            editor_components:
-              - image
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
