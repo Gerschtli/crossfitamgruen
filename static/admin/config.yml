@@ -103,3 +103,12 @@ collections:
           - *fieldTitle
           - *fieldDescription
           - *fieldBody
+
+      - file: src/pages/kontakt/erfolg.md
+        label: Contact Success
+        name: contactSuccess
+        fields:
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
