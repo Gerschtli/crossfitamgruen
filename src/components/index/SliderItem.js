@@ -1,12 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 import { colors } from '../../util/colors'
 import BackgroundImage from '../util/BackgroundImage'
 import { breakpoints, mediaQuery } from '../../util/breakpoints'
+import applyButtonStyles from '../util/applyButtonStyles'
 
 const StyledInner = styled.div`
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `
 const StyledText = styled.div`
   margin-bottom: 1em;
@@ -20,27 +24,7 @@ const StyledText = styled.div`
     font-size: 2.5em;
   }
 `
-const StyledButton = styled.button`
-  height: 3em;
-  border: 0;
-  border-radius: 3em;
-  padding-left: 2em;
-  padding-right: 2em;
-  background-color: ${colors.accent.light};
-  color: ${colors.light};
-  font-size: 1em;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-
-  ${mediaQuery(breakpoints.sm)} {
-    font-size: 1.2em;
-  }
-
-  &:hover {
-    background-color: ${colors.accent.dark};
-  }
-`
+const StyledLink = applyButtonStyles(Link)
 const SliderItem = ({ key, className, image, text }) => {
   let options = {
     className,
@@ -56,7 +40,7 @@ const SliderItem = ({ key, className, image, text }) => {
     <BackgroundImage {...options}>
       <StyledInner>
         <StyledText>{text}</StyledText>
-        <StyledButton>Kontakt</StyledButton>
+        <StyledLink to={'/kontakt/'}>Kontakt</StyledLink>
       </StyledInner>
     </BackgroundImage>
   )
