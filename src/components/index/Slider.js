@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick.css'
 
 import SliderItem from './SliderItem'
 import { NextArrow, PrevArrow } from './SliderArrows'
+import { graphql } from 'gatsby'
 
 const sliderHeight = css`
   height: 75vh;
@@ -42,3 +43,18 @@ const Slider = styled(SliderComponent)`
 `
 
 export default Slider
+
+export const query = graphql`
+  fragment SliderFragment on MarkdownRemarkFrontmatter {
+    slider {
+      text
+      image {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  }
+`

@@ -29,16 +29,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
-        slider {
-          text
-          image {
-            childImageSharp {
-              fluid(quality: 90, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
-              }
-            }
-          }
-        }
+        ...SliderFragment
         ...InfoBoxesFragment
       }
     }
