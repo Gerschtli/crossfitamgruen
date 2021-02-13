@@ -83,3 +83,34 @@ collections:
               - numbered-list
             editor_components:
               - image
+
+      - file: src/pages/impressum.md
+        label: Imprint
+        name: imprint
+        fields:
+          - label: Template Key
+            name: templateKey
+            widget: hidden
+
+          - label: Title
+            name: title
+            widget: string
+
+          - label: Description
+            name: description
+            widget: string
+
+          - label: Body
+            name: body
+            widget: markdown
+            buttons:
+              - bold
+              - italic
+              - link
+              - heading-one
+              - heading-two
+              - heading-three
+              - bulleted-list
+              - numbered-list
+            editor_components:
+              - image
