@@ -14,7 +14,10 @@ const BackgroundImage = ({ className, image, children }) => {
   }
 
   return (
-    <div className={className} style={{ backgroundImage: `url(${image})` }}>
+    <div
+      className={className}
+      style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover' }}
+    >
       {children}
     </div>
   )
