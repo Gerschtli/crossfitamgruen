@@ -30,14 +30,14 @@ const StyledLinkColumn = styled.div`
   display: flex;
   flex-direction: column;
 `
-// const StyledLinkColumnSeparator = styled.div`
-//   height: 0.8em;
-//
-//   ${mediaQuery(breakpoints.sm)} {
-//     height: auto;
-//     width: 3em;
-//   }
-// `
+const StyledLinkColumnSeparator = styled.div`
+  height: 0.8em;
+
+  ${mediaQuery(breakpoints.sm)} {
+    height: auto;
+    width: 3em;
+  }
+`
 const StyledLink = styled(Link)`
   color: ${colors.light};
   text-decoration: none;
@@ -58,12 +58,10 @@ const Footer = () => (
         <StyledLinkSeparator />
         <StyledLink to={'/impressum/'}>Impressum</StyledLink>
       </StyledLinkColumn>
-      {/*<StyledLinkColumnSeparator />*/}
-      {/*<StyledLinkColumn>*/}
-      {/*  <StyledLink to={'/datenschutz/'}>Datenschutz</StyledLink>*/}
-      {/*  <StyledLinkSeparator />*/}
-      {/*  <StyledLink to={'/impressum/'}>Impressum</StyledLink>*/}
-      {/*</StyledLinkColumn>*/}
+      <StyledLinkColumnSeparator />
+      <StyledLinkColumn>
+        <StyledLink to={'/kontakt/'}>Kontakt</StyledLink>
+      </StyledLinkColumn>
     </StyledLinkBox>
     <StyledSeparator />
     <JournalLink />
