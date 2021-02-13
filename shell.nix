@@ -13,4 +13,6 @@ mkShell {
     libtool
     nasm
   ];
+
+  GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR = "false";
 }
