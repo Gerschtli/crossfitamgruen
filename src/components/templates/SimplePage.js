@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Layout from '../base/Layout'
 import Content from '../util/Content'
-import { breakpoints } from '../../util/breakpoints'
+import { breakpoints, mediaQuery } from '../../util/breakpoints'
 import { graphql } from 'gatsby'
 import { normalizePageInputWithBody } from '../../util/normalizer'
 
@@ -11,6 +11,11 @@ const StyledContent = styled(Content)`
   margin: 0 auto;
   max-width: ${breakpoints.md}em;
   padding: 1em;
+
+  ${mediaQuery(breakpoints.sm)} {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
 
   p {
     margin-top: 1em;
