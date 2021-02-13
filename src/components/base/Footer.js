@@ -18,15 +18,54 @@ const StyledFooter = styled.footer`
     padding-right: 1.5em;
   }
 `
+const StyledLinkBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${mediaQuery(breakpoints.sm)} {
+    flex-direction: row;
+  }
+`
+const StyledLinkColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+// const StyledLinkColumnSeparator = styled.div`
+//   height: 0.8em;
+//
+//   ${mediaQuery(breakpoints.sm)} {
+//     height: auto;
+//     width: 3em;
+//   }
+// `
 const StyledLink = styled(Link)`
   color: ${colors.light};
   text-decoration: none;
   font-size: 0.8em;
 `
+const StyledLinkSeparator = styled.div`
+  height: 0.8em;
+`
+const StyledSeparator = styled.div`
+  width: 1.5em;
+`
 
 const Footer = () => (
   <StyledFooter>
-    <StyledLink to={'/datenschutz/'}>Datenschutz</StyledLink>
+    <StyledLinkBox>
+      <StyledLinkColumn>
+        <StyledLink to={'/datenschutz/'}>Datenschutz</StyledLink>
+        <StyledLinkSeparator />
+        <StyledLink to={'/impressum/'}>Impressum</StyledLink>
+      </StyledLinkColumn>
+      {/*<StyledLinkColumnSeparator />*/}
+      {/*<StyledLinkColumn>*/}
+      {/*  <StyledLink to={'/datenschutz/'}>Datenschutz</StyledLink>*/}
+      {/*  <StyledLinkSeparator />*/}
+      {/*  <StyledLink to={'/impressum/'}>Impressum</StyledLink>*/}
+      {/*</StyledLinkColumn>*/}
+    </StyledLinkBox>
+    <StyledSeparator />
     <JournalLink />
   </StyledFooter>
 )
