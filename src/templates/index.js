@@ -39,16 +39,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        infoBoxes {
-          text
-          image {
-            childImageSharp {
-              fixed(quality: 90, width: 100) {
-                ...GatsbyImageSharpFixed_withWebp_noBase64
-              }
-            }
-          }
-        }
+        ...InfoBoxesFragment
       }
     }
   }

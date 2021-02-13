@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Image from '../util/Image'
 import { breakpoints, mediaQuery } from '../../util/breakpoints'
 import { colors } from '../../util/colors'
+import { graphql } from 'gatsby'
 
 const StyledWrapper = styled.div`
   margin: 0 auto;
@@ -51,3 +52,18 @@ const InfoBoxes = ({ items }) => (
 )
 
 export default InfoBoxes
+
+export const query = graphql`
+  fragment InfoBoxesFragment on MarkdownRemarkFrontmatter {
+    infoBoxes {
+      text
+      image {
+        childImageSharp {
+          fixed(quality: 90, width: 100) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+    }
+  }
+`
