@@ -94,3 +94,12 @@ collections:
           - *fieldTitle
           - *fieldDescription
           - *fieldBody
+
+      - file: src/pages/kontakt.md
+        label: Contact
+        name: contact
+        fields:
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
