@@ -24,6 +24,13 @@ be added after the invitation is sent.
 npm run serve
 ```
 
+### Build and serve static page locally
+
+```
+npm run build
+npx gatsby serve
+```
+
 ### Local git gateway
 
 Run local git proxy
