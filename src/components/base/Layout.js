@@ -16,10 +16,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children, title, description }) => (
-  <>
-    <Normalize />
-    <GlobalStyle />
+const Layout = ({ children, title, description, isPreview }) => {
+  const helmet = (
     <Helmet>
       <html lang="de" />
       <title>{title}</title>
@@ -49,10 +47,18 @@ const Layout = ({ children, title, description }) => (
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
     </Helmet>
-    <Header />
-    {children}
-    <Footer />
-  </>
-)
+  )
+
+  return (
+    <>
+      <Normalize />
+      <GlobalStyle />
+      {isPreview ? <></> : helmet}
+      <Header />
+      {children}
+      <Footer />
+    </>
+  )
+}
 
 export default Layout

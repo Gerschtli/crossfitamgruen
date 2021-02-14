@@ -9,7 +9,11 @@ const SimplePage = ({ data, entry, widgetFor }) => {
   const { dataSet, html } = normalizePageInputWithBody(data, entry, widgetFor)
 
   return (
-    <Layout title={dataSet.title} description={dataSet.description}>
+    <Layout
+      title={dataSet.title}
+      description={dataSet.description}
+      isPreview={!data}
+    >
       <Content content={html} isPreview={!data} />
     </Layout>
   )

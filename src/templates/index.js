@@ -10,7 +10,11 @@ const IndexPage = ({ data, entry }) => {
   let dataSet = normalizePageInput(data, entry)
 
   return (
-    <Layout title={dataSet.title} description={dataSet.description}>
+    <Layout
+      title={dataSet.title}
+      description={dataSet.description}
+      isPreview={!data}
+    >
       <main>
         <Slider items={dataSet.slider} />
         <InfoBoxes items={dataSet.infoBoxes} />
