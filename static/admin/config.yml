@@ -8,16 +8,19 @@ fields:
     label: HTML Title
     name: title
     widget: string
+    required: true
 
   - &fieldDescription
     label: HTML Description
     name: description
     widget: text
+    required: true
 
   - &fieldBody
     label: Body
     name: body
     widget: markdown
+    required: true
     buttons:
       - bold
       - italic
@@ -64,9 +67,11 @@ collections:
               - label: Text
                 name: text
                 widget: string
+                required: true
               - label: Image
                 name: image
                 widget: image
+                required: true
 
           - label: Info boxes
             label_singular: Info box
@@ -78,9 +83,11 @@ collections:
               - label: Text
                 name: text
                 widget: text
+                required: true
               - label: Image
                 name: image
                 widget: image
+                required: true
 
       - file: src/pages/datenschutz.md
         preview_path: /datenschutz
@@ -114,6 +121,7 @@ collections:
           - label: Eversports widget ID
             name: eversportsId
             widget: string
+            required: true
 
       - file: src/pages/kontakt.md
         preview_path: /kontakt
