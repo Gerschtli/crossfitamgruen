@@ -1,19 +1,13 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { breakpoints, mediaQuery } from '../../util/breakpoints'
+import { breakpoints } from '../../util/breakpoints'
 import { colors } from '../../util/colors'
 import applyButtonStyles from '../util/applyButtonStyles'
 
-const StyledSection = styled.section`
-  margin: 0 auto;
+const StyledForm = styled.form`
+  margin: 1em auto;
   max-width: ${breakpoints.sm}em;
-  padding: 1em;
-
-  ${mediaQuery(breakpoints.sm)} {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-  }
 `
 const StyledLabel = styled.label`
   display: block;
@@ -49,34 +43,32 @@ const StyledButton = styled(applyButtonStyles())`
 `
 
 const ContactForm = () => (
-  <StyledSection>
-    <form
-      name="contact"
-      method="post"
-      action="/kontakt/erfolgreich"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
-      <input type="hidden" name="form-name" value="contact" />
+  <StyledForm
+    name="contact"
+    method="post"
+    action="/kontakt/erfolgreich"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="contact" />
 
-      <StyledLabel for="name">Dein Name</StyledLabel>
-      <StyledInput id="name" type="text" name="name" required />
+    <StyledLabel for="name">Dein Name</StyledLabel>
+    <StyledInput id="name" type="text" name="name" required />
 
-      <StyledSpacer />
+    <StyledSpacer />
 
-      <StyledLabel for="email">Deine E-Mail-Adresse</StyledLabel>
-      <StyledInput id="email" type="email" name="email" required />
+    <StyledLabel for="email">Deine E-Mail-Adresse</StyledLabel>
+    <StyledInput id="email" type="email" name="email" required />
 
-      <StyledSpacer />
+    <StyledSpacer />
 
-      <StyledLabel for="message">Deine Nachricht</StyledLabel>
-      <StyledTextarea id="message" name="message" required />
+    <StyledLabel for="message">Deine Nachricht</StyledLabel>
+    <StyledTextarea id="message" name="message" required />
 
-      <StyledSpacer />
+    <StyledSpacer />
 
-      <StyledButton type="submit">Kontakanfrage absenden!</StyledButton>
-    </form>
-  </StyledSection>
+    <StyledButton type="submit">Kontakanfrage absenden!</StyledButton>
+  </StyledForm>
 )
 
 export default ContactForm
