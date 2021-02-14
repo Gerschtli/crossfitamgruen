@@ -137,3 +137,13 @@ collections:
           - *fieldTitle
           - *fieldDescription
           - *fieldBody
+
+      - file: src/pages/404.md
+        preview_path: /404
+        label: Not found page
+        name: notFound
+        fields:
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
