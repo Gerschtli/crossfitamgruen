@@ -7,7 +7,7 @@ import ContactSuccessPage from '../templates/contactSuccess'
 import DisclosurePage from '../templates/disclosure'
 import ImprintPage from '../templates/imprint'
 import IndexPage from '../templates/index'
-import ContactForm from '../components/contact/ContactForm'
+import ContactForm from '../components/editorComponents/ContactForm'
 
 CMS.registerEditorComponent({
   id: 'contactForm',

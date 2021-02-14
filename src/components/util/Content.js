@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import rehypeReact from 'rehype-react'
 
 import { breakpoints, mediaQuery } from '../../util/breakpoints'
-import rehypeReact from 'rehype-react'
-import ContactForm from '../contact/ContactForm'
+import ContactForm from '../editorComponents/ContactForm'
 
 const ContentComponent = ({
   content,
