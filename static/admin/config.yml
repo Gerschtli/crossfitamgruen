@@ -102,6 +102,19 @@ collections:
           - *fieldDescription
           - *fieldBody
 
+      - file: src/pages/stundenplan.md
+        preview_path: /stundenplan
+        label: Schedule
+        name: schedule
+        fields:
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
+          - label: Eversports widget ID
+            name: eversportsId
+            widget: string
+
       - file: src/pages/kontakt.md
         preview_path: /kontakt
         label: Contact

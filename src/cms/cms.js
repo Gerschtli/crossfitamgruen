@@ -7,6 +7,7 @@ import ContactSuccessPage from '../templates/contactSuccess'
 import DisclosurePage from '../templates/disclosure'
 import ImprintPage from '../templates/imprint'
 import IndexPage from '../templates/index'
+import SchedulePage from '../templates/schedule'
 import ContactForm from '../components/editorComponents/ContactForm'
 
 CMS.registerEditorComponent({
@@ -29,3 +30,4 @@ CMS.registerPreviewTemplate('contactSuccess', wrapper(ContactSuccessPage))
 CMS.registerPreviewTemplate('disclosure', wrapper(DisclosurePage))
 CMS.registerPreviewTemplate('imprint', wrapper(ImprintPage))
 CMS.registerPreviewTemplate('index', wrapper(IndexPage))
+CMS.registerPreviewTemplate('schedule', wrapper(SchedulePage))

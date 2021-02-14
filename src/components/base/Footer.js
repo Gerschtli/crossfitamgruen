@@ -61,6 +61,8 @@ const Footer = () => (
       <StyledLinkColumnSeparator />
       <StyledLinkColumn>
         <StyledLink to={'/kontakt/'}>Kontakt</StyledLink>
+        <StyledLinkSeparator />
+        <StyledLink to={'/stundenplan/'}>Stundenplan</StyledLink>
       </StyledLinkColumn>
     </StyledLinkBox>
     <StyledSeparator />
