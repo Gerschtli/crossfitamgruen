@@ -34,6 +34,8 @@ backend:
   name: git-gateway
   branch: master
 
+site_url: https://crossfitamgruen.netlify.app
+
 media_folder: static/img
 public_folder: /img
 
@@ -42,6 +44,7 @@ collections:
     label: Pages
     files:
       - file: src/pages/index.md
+        preview_path: /
         label: Landing Page
         name: index
         fields:
@@ -78,6 +81,7 @@ collections:
                 widget: image
 
       - file: src/pages/datenschutz.md
+        preview_path: /datenschutz
         label: Disclosure
         name: disclosure
         fields:
@@ -87,6 +91,7 @@ collections:
           - *fieldBody
 
       - file: src/pages/impressum.md
+        preview_path: /impressum
         label: Imprint
         name: imprint
         fields:
@@ -96,6 +101,7 @@ collections:
           - *fieldBody
 
       - file: src/pages/kontakt.md
+        preview_path: /kontakt
         label: Contact
         name: contact
         fields:
@@ -104,8 +110,9 @@ collections:
           - *fieldDescription
           - *fieldBody
 
-      - file: src/pages/kontakt/erfolg.md
-        label: Contact Success
+      - file: src/pages/kontakt/erfolgreich.md
+        preview_path: /kontakt/erfolgreich
+        label: Contact form success page
         name: contactSuccess
         fields:
           - *fieldTemplateKey
