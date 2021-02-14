@@ -20,7 +20,7 @@ const Layout = ({ children, title, description, isPreview }) => {
   const helmet = (
     <Helmet>
       <html lang="de" />
-      <title>{title}</title>
+      <title>{title} // CrossFit am Grün</title>
       <meta name="description" content={description} />
       <meta name="ROBOTS" content="NOINDEX,NOFOLLOW" />
       <link
