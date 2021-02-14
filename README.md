@@ -23,3 +23,11 @@ be added after the invitation is sent.
 ```
 npm run serve
 ```
+
+### Local git gateway
+
+Run local git proxy
+
+```
+npx netlify-cms-proxy-server
+```
