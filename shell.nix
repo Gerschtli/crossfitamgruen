@@ -5,7 +5,7 @@ mkShell {
     nodejs-12_x
     yarn
 
-    # for mozjpeg (transitive dependency of sharp
+    # for mozjpeg (transitive dependency of sharp)
     autoconf
     automake
     pkgconfig
