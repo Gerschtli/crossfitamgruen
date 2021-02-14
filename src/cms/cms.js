@@ -2,13 +2,13 @@ import CMS from 'netlify-cms-app'
 import React from 'react'
 
 import { default as wrapper } from '../util/withStyledComponentsRendered'
-import ContactPage from '../templates/contact'
-import ContactSuccessPage from '../templates/contactSuccess'
-import DisclosurePage from '../templates/disclosure'
-import ImprintPage from '../templates/imprint'
-import IndexPage from '../templates/index'
-import NotFoundPage from '../templates/notFound'
-import SchedulePage from '../templates/schedule'
+import ContactSuccessTemplate from '../templates/contactSuccess'
+import ContactTemplate from '../templates/contact'
+import DisclosureTemplate from '../templates/disclosure'
+import ImprintTemplate from '../templates/imprint'
+import IndexTemplate from '../templates/index'
+import NotFoundTemplate from '../templates/notFound'
+import ScheduleTemplate from '../templates/schedule'
 import ContactForm from '../components/editorComponents/ContactForm'
 
 CMS.registerEditorComponent({
@@ -26,10 +26,10 @@ CMS.registerEditorComponent({
   },
 })
 
-CMS.registerPreviewTemplate('contact', wrapper(ContactPage))
-CMS.registerPreviewTemplate('contactSuccess', wrapper(ContactSuccessPage))
-CMS.registerPreviewTemplate('disclosure', wrapper(DisclosurePage))
-CMS.registerPreviewTemplate('imprint', wrapper(ImprintPage))
-CMS.registerPreviewTemplate('index', wrapper(IndexPage))
-CMS.registerPreviewTemplate('notFound', wrapper(NotFoundPage))
-CMS.registerPreviewTemplate('schedule', wrapper(SchedulePage))
+CMS.registerPreviewTemplate('contact', wrapper(ContactTemplate))
+CMS.registerPreviewTemplate('contactSuccess', wrapper(ContactSuccessTemplate))
+CMS.registerPreviewTemplate('disclosure', wrapper(DisclosureTemplate))
+CMS.registerPreviewTemplate('imprint', wrapper(ImprintTemplate))
+CMS.registerPreviewTemplate('index', wrapper(IndexTemplate))
+CMS.registerPreviewTemplate('notFound', wrapper(NotFoundTemplate))
+CMS.registerPreviewTemplate('schedule', wrapper(ScheduleTemplate))
