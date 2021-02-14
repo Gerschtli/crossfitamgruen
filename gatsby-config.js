@@ -44,6 +44,10 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: '@rstacruz/gatsby-remark-component',
+            options: { components: ['contact-form'] },
+          },
           `gatsby-plugin-netlify-cms-paths`,
           {
             resolve: `gatsby-remark-images`,

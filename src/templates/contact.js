@@ -1,13 +1,16 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
-import { normalizePageInputWithBody } from '../util/normalizer'
+import { normalizePageInputWithParsedBody } from '../util/normalizer'
 import Layout from '../components/base/Layout'
 import Content from '../components/util/Content'
-import ContactForm from '../components/contact/ContactForm'
 
 const ContactTemplate = ({ data, entry, widgetFor }) => {
-  const { dataSet, html } = normalizePageInputWithBody(data, entry, widgetFor)
+  const { dataSet, html } = normalizePageInputWithParsedBody(
+    data,
+    entry,
+    widgetFor
+  )
 
   return (
     <Layout
@@ -15,8 +18,7 @@ const ContactTemplate = ({ data, entry, widgetFor }) => {
       description={dataSet.description}
       isPreview={!data}
     >
-      <Content content={html} isPreview={!data} />
-      <ContactForm />
+      <Content content={html} isPreview={!data} injectComponents={true} />
     </Layout>
   )
 }
@@ -30,7 +32,7 @@ export const pageQuery = graphql`
         title
         description
       }
-      html
+      htmlAst
     }
   }
 `

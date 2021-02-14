@@ -2,10 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { breakpoints, mediaQuery } from '../../util/breakpoints'
+import rehypeReact from 'rehype-react'
+import ContactForm from '../contact/ContactForm'
 
-const ContentComponent = ({ content, className, isPreview }) => {
+const ContentComponent = ({
+  content,
+  className,
+  isPreview,
+  injectComponents,
+}) => {
   if (isPreview) {
     return <main className={className}>{content}</main>
+  }
+
+  if (injectComponents) {
+    const renderAst = new rehypeReact({
+      createElement: React.createElement,
+      components: { 'contact-form': ContactForm },
+    }).Compiler
+
+    return <main className={className}>{renderAst(content)}</main>
   }
 
   return (

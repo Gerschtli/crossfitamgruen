@@ -110,7 +110,10 @@ collections:
           - *fieldTemplateKey
           - *fieldTitle
           - *fieldDescription
-          - *fieldBody
+          - <<: *fieldBody
+            editor_components:
+              - contactForm
+              - image
 
       - file: src/pages/kontakt/erfolgreich.md
         preview_path: /kontakt/erfolgreich

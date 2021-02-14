@@ -22,3 +22,13 @@ export const normalizePageInputWithBody = (data, entry, widgetFor) => {
 
   return { dataSet, html }
 }
+
+export const normalizePageInputWithParsedBody = (data, entry, widgetFor) => {
+  const dataSet = getDataSet(data, entry)
+
+  const html = isPreviewMode(data)
+    ? widgetFor('body')
+    : data.markdownRemark.htmlAst
+
+  return { dataSet, html }
+}
