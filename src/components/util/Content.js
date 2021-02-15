@@ -1,9 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import rehypeReact from 'rehype-react'
 
 import { breakpoints, mediaQuery } from '../../util/breakpoints'
 import ContactForm from '../editorComponents/ContactForm'
+import { colors } from '../../util/colors'
 
 const ContentComponent = ({
   content,
@@ -60,11 +61,41 @@ const Content = styled(ContentComponent)`
     margin-bottom: 0;
   }
 
-  // necessary for preview
-  img {
-    display: block;
-    margin: 0 auto;
-  }
+  ${(props) =>
+    props.isPreview &&
+    css`
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      form[name='contact'] {
+        position: relative;
+        margin: 1em auto;
+        max-width: ${breakpoints.sm}em;
+        padding: 0.3em;
+
+        &::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.3)
+          );
+          content: 'Contact form (for final design consult live page)';
+          color: ${colors.light};
+          font-weight: bold;
+          font-size: 1em;
+        }
+      }
+    `}
 `
 
 export default Content
