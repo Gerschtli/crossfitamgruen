@@ -17,10 +17,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children, title, description, isPreview }) => {
+  const titleFull = `${title} // CrossFit am Grün`
+
   const helmet = (
     <Helmet>
       <html lang="de" />
-      <title>{title} // CrossFit am Grün</title>
+      <title>{titleFull}</title>
       <meta name="description" content={description} />
       <meta name="ROBOTS" content="NOINDEX,NOFOLLOW" />
       <link
