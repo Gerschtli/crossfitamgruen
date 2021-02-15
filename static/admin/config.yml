@@ -45,13 +45,14 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: pages
-    label: Pages
+  - name: pagesMain
+    label: Main pages
+    description: List of most relevant pages like the homepage, schedule or contact page.
     files:
       - file: src/pages/index.md
         preview_path: /
-        label: Landing Page
         name: index
+        label: Homepage
         fields:
           - *fieldTemplateKey
           - *fieldTitle
@@ -89,26 +90,6 @@ collections:
                 widget: image
                 required: true
 
-      - file: src/pages/datenschutz.md
-        preview_path: /datenschutz
-        label: Disclosure
-        name: disclosure
-        fields:
-          - *fieldTemplateKey
-          - *fieldTitle
-          - *fieldDescription
-          - *fieldBody
-
-      - file: src/pages/impressum.md
-        preview_path: /impressum
-        label: Imprint
-        name: imprint
-        fields:
-          - *fieldTemplateKey
-          - *fieldTitle
-          - *fieldDescription
-          - *fieldBody
-
       - file: src/pages/stundenplan.md
         preview_path: /stundenplan
         label: Schedule
@@ -140,6 +121,31 @@ collections:
         preview_path: /kontakt/erfolgreich
         label: Contact form success page
         name: contactSuccess
+        fields:
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
+
+
+  - name: pagesLowPrio
+    label: Legal pages and others
+    description: List of less relevant pages like the disclosure, imprint or not found pages.
+    files:
+      - file: src/pages/datenschutz.md
+        preview_path: /datenschutz
+        label: Disclosure
+        name: disclosure
+        fields:
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
+
+      - file: src/pages/impressum.md
+        preview_path: /impressum
+        label: Imprint
+        name: imprint
         fields:
           - *fieldTemplateKey
           - *fieldTitle
