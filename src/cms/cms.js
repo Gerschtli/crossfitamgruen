@@ -15,15 +15,9 @@ CMS.registerEditorComponent({
   id: 'contactForm',
   label: 'Contact form',
   pattern: /^<contact-form \/>$/,
-  fromBlock() {
-    return {}
-  },
-  toBlock() {
-    return '<contact-form />'
-  },
-  toPreview() {
-    return <ContactForm />
-  },
+  fromBlock: () => {},
+  toBlock: () => '<contact-form />',
+  toPreview: () => <ContactForm />,
 })
 
 CMS.registerPreviewTemplate('contact', wrapper(ContactTemplate))
