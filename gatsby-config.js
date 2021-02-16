@@ -37,9 +37,7 @@ module.exports = {
         display: 'swap',
       },
     },
-    // Including in your Gatsby plugins will transform any paths in your frontmatter
-    `gatsby-plugin-netlify-cms-paths`,
-    // Including in your Remark plugins will transform any paths in your markdown body
+    `gatsby-plugin-netlify-cms-paths`, // convert paths for images
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -48,7 +46,7 @@ module.exports = {
             resolve: '@rstacruz/gatsby-remark-component',
             options: { components: ['contact-form'] },
           },
-          `gatsby-plugin-netlify-cms-paths`,
+          `gatsby-plugin-netlify-cms-paths`, // convert paths for images
           {
             resolve: `gatsby-remark-images`,
             options: {
