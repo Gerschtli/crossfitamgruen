@@ -25,15 +25,10 @@ const StyledText = styled.div`
   }
 `
 const StyledLink = applyButtonStyles(Link)
-const SliderItem = ({ key, className, image, text }) => {
+const SliderItem = ({ className, image, text }) => {
   let options = {
     className,
     image,
-  }
-
-  if (key === 0) {
-    options.loading = 'eager'
-    options.fadeIn = false
   }
 
   return (
