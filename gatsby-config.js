@@ -5,10 +5,12 @@ module.exports = {
     PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
+    // general
     'gatsby-plugin-preact',
-    'gatsby-plugin-netlify-cache',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+
+    // sources
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -30,25 +32,30 @@ module.exports = {
         name: 'images',
       },
     },
+
+    // fonts
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: [`Didact Gothic:400,700`],
+        fonts: ['Didact Gothic:400,700'],
         display: 'swap',
       },
     },
-    `gatsby-plugin-netlify-cms-paths`, // convert paths for images
+
+    // remark and frontmatter transformer
+    'gatsby-plugin-netlify-cms-paths', // convert paths for images
+    'gatsby-plugin-catch-links',
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
             resolve: '@rstacruz/gatsby-remark-component',
             options: { components: ['contact-form'] },
           },
-          `gatsby-plugin-netlify-cms-paths`, // convert paths for images
+          'gatsby-plugin-netlify-cms-paths', // convert paths for images
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-images',
             options: {
               linkImagesToOriginal: false,
               maxWidth: 800,
@@ -66,9 +73,13 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-catch-links',
+
+    // images
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+
+    // netlify
+    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
