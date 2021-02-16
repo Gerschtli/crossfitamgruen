@@ -78,6 +78,16 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
 
+    // offline
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        workboxConfig: {
+          globPatterns: ['favicon.ico', 'icons/**'],
+        },
+      },
+    },
+
     // netlify
     'gatsby-plugin-netlify-cache',
     {

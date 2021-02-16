@@ -20,7 +20,7 @@ const Layout = ({ children, title, description, isPreview }) => {
   const titleFull = `${title} // CrossFit am Grün`
 
   const helmet = (
-    <Helmet>
+    <Helmet defer={false}>
       <html lang="de" />
       <title>{titleFull}</title>
       <meta name="description" content={description} />
