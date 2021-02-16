@@ -46,12 +46,12 @@ const Layout = ({ children, title, description, isPreview }) => {
       <link
         rel="mask-icon"
         href="/icons/safari-pinned-tab.svg"
-        color="#5bbad5"
+        color="#18c47c"
       />
       <meta name="apple-mobile-web-app-title" content="CrossFit am Gr&uuml;n" />
       <meta name="application-name" content="CrossFit am Gr&uuml;n" />
-      <meta name="msapplication-TileColor" content="#da532c" />
-      <meta name="theme-color" content="#ffffff" />
+      <meta name="msapplication-TileColor" content="#18c47c" />
+      <meta name="theme-color" content="#18c47c" />
     </Helmet>
   )
 
