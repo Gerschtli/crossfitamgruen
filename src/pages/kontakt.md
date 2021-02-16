@@ -1,6 +1,6 @@
 ---
 templateKey: contact
-title: Title
+title: Kontakt
 description: Description
 ---
 # Kontakt

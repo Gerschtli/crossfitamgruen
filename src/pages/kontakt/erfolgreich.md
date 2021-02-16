@@ -1,6 +1,6 @@
 ---
 templateKey: contactSuccess
-title: Title
+title: Kontaktanfrage versendet
 description: Description
 ---
 # Kontaktanfrage versendet
