@@ -12,6 +12,7 @@ import ScheduleTemplate from '../templates/schedule'
 import ContactForm from '../components/editorComponents/ContactForm'
 import { HeaderTemplate } from '../components/base/Header'
 import { wrapDataComponent } from '../components/util/wrapDataComponent'
+import { FooterTemplate } from '../components/base/Footer'
 
 CMS.registerEditorComponent({
   id: 'contactForm',
@@ -25,6 +26,10 @@ CMS.registerEditorComponent({
 CMS.registerPreviewTemplate(
   'header',
   wrapper(wrapDataComponent(HeaderTemplate))
+)
+CMS.registerPreviewTemplate(
+  'footer',
+  wrapper(wrapDataComponent(FooterTemplate))
 )
 
 CMS.registerPreviewTemplate('contact', wrapper(ContactTemplate))

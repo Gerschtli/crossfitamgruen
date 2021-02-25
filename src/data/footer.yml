@@ -1,0 +1,12 @@
+dataKey: footer
+linkColumns:
+  - links:
+      - text: Datenschutz
+        link: /datenschutz/
+      - text: Impressum
+        link: /impressum/
+  - links:
+      - text: Kontakt
+        link: /kontakt/
+      - text: Stundenplan
+        link: /stundenplan/

@@ -185,3 +185,33 @@ collections:
             name: headerSmall
             widget: string
             required: true
+
+      - file: src/data/footer.yml
+        label: Footer
+        name: footer
+        fields:
+          - *fieldDataKey
+          - label: Footer link columns
+            label_singular: Footer link column
+            name: linkColumns
+            widget: list
+            summary: Column
+            min: 1
+            max: 3
+            collapsed: false
+            fields:
+              - label: Footer links
+                label_singular: Footer link
+                name: links
+                widget: list
+                summary: "{{fields.text}} ({{fields.link}})"
+                min: 1
+                fields:
+                  - label: Text
+                    name: text
+                    widget: string
+                    required: true
+                  - label: Link
+                    name: link
+                    widget: string
+                    required: true
