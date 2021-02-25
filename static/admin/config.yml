@@ -184,6 +184,26 @@ collections:
     label: General layout settings
     description: Configure general settings and layout components.
     files:
+      - file: src/data/settings.yml
+        label: Settings
+        name: settings
+        editor:
+          preview: false
+        fields:
+          - *fieldDataKey
+          - label: Application name
+            name: appName
+            widget: string
+            required: true
+            pattern: [ '^\S.*\S$', "Must not begin or end with a space" ]
+            hint: Application name will be used when installed as PWA or saved on home screen.
+          - label: HTML Title suffix
+            name: titleSuffix
+            widget: string
+            required: true
+            pattern: [ '^\S.*\S$', "Must not begin or end with a space" ]
+            hint: This text will be appended to every HTML Title.
+
       - file: src/data/header.yml
         label: Header
         name: header
