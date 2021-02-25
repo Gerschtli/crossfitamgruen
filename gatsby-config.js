@@ -1,3 +1,9 @@
+const fs = require('fs')
+const yaml = require('js-yaml')
+
+const fileContents = fs.readFileSync('./src/data/settings.yml', 'utf8')
+const settings = yaml.load(fileContents)
+
 module.exports = {
   flags: {
     FAST_REFRESH: true,
@@ -102,7 +108,7 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
-        htmlTitle: 'CMS // CrossFit am Grün',
+        htmlTitle: `CMS ${settings.titleSuffix}`,
       },
     },
     'gatsby-plugin-netlify',
