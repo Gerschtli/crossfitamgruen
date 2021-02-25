@@ -11,6 +11,7 @@ const ScheduleTemplate = ({ data, entry, widgetFor }) => {
 
   return (
     <Layout
+      indexable={dataSet.indexable}
       title={dataSet.title}
       description={dataSet.description}
       isPreview={!data}
@@ -27,6 +28,7 @@ export const pageQuery = graphql`
   query ScheduleTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "schedule" } }) {
       frontmatter {
+        indexable
         title
         description
         eversportsId

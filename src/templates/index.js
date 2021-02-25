@@ -11,6 +11,7 @@ const IndexPage = ({ data, entry }) => {
 
   return (
     <Layout
+      indexable={dataSet.indexable}
       title={dataSet.title}
       description={dataSet.description}
       isPreview={!data}
@@ -29,6 +30,7 @@ export const pageQuery = graphql`
   query IndexTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index" } }) {
       frontmatter {
+        indexable
         title
         description
         ...SliderFragment

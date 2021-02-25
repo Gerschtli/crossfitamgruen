@@ -14,6 +14,7 @@ const ContactTemplate = ({ data, entry, widgetFor }) => {
 
   return (
     <Layout
+      indexable={dataSet.indexable}
       title={dataSet.title}
       description={dataSet.description}
       isPreview={!data}
@@ -29,6 +30,7 @@ export const pageQuery = graphql`
   query ContactTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "contact" } }) {
       frontmatter {
+        indexable
         title
         description
       }

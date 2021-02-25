@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const MetaData = ({ title, description }) => {
+const MetaData = ({ indexable, title, description }) => {
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       dataYaml(dataKey: { eq: "settings" }) {
@@ -28,13 +28,16 @@ const MetaData = ({ title, description }) => {
   `)
 
   const titleFull = `${title} ${data.dataYaml.titleSuffix}`
+  // TODO: uncomment following line on final release
+  // const robots = indexable ? 'INDEX,FOLLOW' : 'NOINDEX,NOFOLLOW'
+  const robots = 'NOINDEX,NOFOLLOW'
 
   return (
     <Helmet defer={false}>
       <html lang="de" />
       <title>{titleFull}</title>
       <meta name="description" content={description} />
-      <meta name="ROBOTS" content="NOINDEX,NOFOLLOW" />
+      <meta name="ROBOTS" content={robots} />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -66,7 +69,7 @@ const MetaData = ({ title, description }) => {
   )
 }
 
-const Layout = ({ children, title, description, isPreview }) => {
+const Layout = ({ children, indexable, title, description, isPreview }) => {
   return (
     <>
       <Normalize />
@@ -75,7 +78,11 @@ const Layout = ({ children, title, description, isPreview }) => {
         children
       ) : (
         <>
-          <MetaData title={title} description={description} />
+          <MetaData
+            indexable={indexable}
+            title={title}
+            description={description}
+          />
           <Header />
           {children}
           <Footer />
