@@ -1,6 +1,7 @@
 ---
 templateKey: index
-title: Title
+link: /
+title: Startseite
 description: Description
 slider:
   - image: /img/slider1.jpg

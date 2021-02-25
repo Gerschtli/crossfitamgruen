@@ -1,5 +1,6 @@
 ---
 templateKey: schedule
+link: /stundenplan/
 title: Stundenplan
 description: Description
 eversportsId: gt7syf

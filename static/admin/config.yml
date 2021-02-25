@@ -9,17 +9,24 @@ fields:
     name: templateKey
     widget: hidden
 
+  - &fieldLink
+    label: Link
+    name: link
+    widget: hidden
+
   - &fieldTitle
     label: HTML Title
     name: title
     widget: string
     required: true
+    hint: This text is presented in the tab of your browser and in Google search results.
 
   - &fieldDescription
     label: HTML Description
     name: description
     widget: text
     required: true
+    hint: This text is visible as longer excerpt of your page, shown in Google search results.
 
   - &fieldBody
     label: Body
@@ -60,6 +67,7 @@ collections:
         label: Homepage
         fields:
           - *fieldTemplateKey
+          - *fieldLink
           - *fieldTitle
           - *fieldDescription
 
@@ -96,11 +104,12 @@ collections:
                 required: true
 
       - file: src/pages/stundenplan.md
-        preview_path: /stundenplan
+        preview_path: /stundenplan/
         label: Schedule
         name: schedule
         fields:
           - *fieldTemplateKey
+          - *fieldLink
           - *fieldTitle
           - *fieldDescription
           - *fieldBody
@@ -110,11 +119,12 @@ collections:
             required: true
 
       - file: src/pages/kontakt.md
-        preview_path: /kontakt
+        preview_path: /kontakt/
         label: Contact
         name: contact
         fields:
           - *fieldTemplateKey
+          - *fieldLink
           - *fieldTitle
           - *fieldDescription
           - <<: *fieldBody
@@ -122,45 +132,47 @@ collections:
               - contactForm
               - image
 
-      - file: src/pages/kontakt/erfolgreich.md
-        preview_path: /kontakt/erfolgreich
-        label: Contact form success page
-        name: contactSuccess
+      - file: src/pages/datenschutz.md
+        preview_path: /datenschutz/
+        label: Disclosure
+        name: disclosure
         fields:
           - *fieldTemplateKey
+          - *fieldLink
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
+
+      - file: src/pages/impressum.md
+        preview_path: /impressum/
+        label: Imprint
+        name: imprint
+        fields:
+          - *fieldTemplateKey
+          - *fieldLink
           - *fieldTitle
           - *fieldDescription
           - *fieldBody
 
 
   - name: pagesLowPrio
-    label: Legal pages and others
-    description: List of less relevant pages like the disclosure, imprint or not found pages.
+    label: Other pages
+    description: List of less relevant pages like the contact success or not found pages.
     files:
-      - file: src/pages/datenschutz.md
-        preview_path: /datenschutz
-        label: Disclosure
-        name: disclosure
-        fields:
-          - *fieldTemplateKey
-          - *fieldTitle
-          - *fieldDescription
-          - *fieldBody
-
-      - file: src/pages/impressum.md
-        preview_path: /impressum
-        label: Imprint
-        name: imprint
-        fields:
-          - *fieldTemplateKey
-          - *fieldTitle
-          - *fieldDescription
-          - *fieldBody
-
       - file: src/pages/404.md
-        preview_path: /404
+        preview_path: /404/
         label: Not found page
         name: notFound
+        fields:
+          - *fieldTemplateKey
+          - *fieldTitle
+          - *fieldDescription
+          - *fieldBody
+
+      - file: src/pages/kontakt/erfolgreich.md
+        preview_path: /kontakt/erfolgreich/
+        label: Contact form success page
+        name: contactSuccess
         fields:
           - *fieldTemplateKey
           - *fieldTitle
@@ -211,7 +223,13 @@ collections:
                     name: text
                     widget: string
                     required: true
+                    hint: Text shown in footer for current link.
                   - label: Link
                     name: link
-                    widget: string
+                    widget: relation
                     required: true
+                    hint: Destination URL for link.
+                    collection: pagesMain
+                    valueField: link
+                    searchFields: [ "title", "link" ]
+                    displayFields: [ "{{title}} ({{link}})" ]
