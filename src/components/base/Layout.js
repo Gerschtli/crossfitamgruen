@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components'
 
 import Header from './Header'
 import Footer from './Footer'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,10 +17,19 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children, title, description, isPreview }) => {
-  const titleFull = `${title} // CrossFit am Grün`
+const MetaData = ({ title, description }) => {
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      dataYaml(dataKey: { eq: "settings" }) {
+        appName
+        titleSuffix
+      }
+    }
+  `)
 
-  const helmet = (
+  const titleFull = `${title} ${data.dataYaml.titleSuffix}`
+
+  return (
     <Helmet defer={false}>
       <html lang="de" />
       <title>{titleFull}</title>
@@ -48,13 +58,15 @@ const Layout = ({ children, title, description, isPreview }) => {
         href="/icons/safari-pinned-tab.svg"
         color="#18c47c"
       />
-      <meta name="apple-mobile-web-app-title" content="CrossFit am Gr&uuml;n" />
-      <meta name="application-name" content="CrossFit am Gr&uuml;n" />
+      <meta name="apple-mobile-web-app-title" content={data.dataYaml.appName} />
+      <meta name="application-name" content={data.dataYaml.appName} />
       <meta name="msapplication-TileColor" content="#18c47c" />
       <meta name="theme-color" content="#18c47c" />
     </Helmet>
   )
+}
 
+const Layout = ({ children, title, description, isPreview }) => {
   return (
     <>
       <Normalize />
@@ -63,7 +75,7 @@ const Layout = ({ children, title, description, isPreview }) => {
         children
       ) : (
         <>
-          {helmet}
+          <MetaData title={title} description={description} />
           <Header />
           {children}
           <Footer />
