@@ -32,3 +32,7 @@ export const normalizePageInputWithParsedBody = (data, entry, widgetFor) => {
 
   return { dataSet, html }
 }
+
+export const normalizeDataInput = (data, entry) => {
+  return isPreviewMode(data) ? entry.getIn(['data']).toJS() : data.dataYaml
+}

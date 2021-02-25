@@ -10,6 +10,8 @@ import IndexTemplate from '../templates/index'
 import NotFoundTemplate from '../templates/notFound'
 import ScheduleTemplate from '../templates/schedule'
 import ContactForm from '../components/editorComponents/ContactForm'
+import { HeaderTemplate } from '../components/base/Header'
+import { wrapDataComponent } from '../components/util/wrapDataComponent'
 
 CMS.registerEditorComponent({
   id: 'contactForm',
@@ -19,6 +21,11 @@ CMS.registerEditorComponent({
   toBlock: () => '<contact-form />',
   toPreview: () => <ContactForm />,
 })
+
+CMS.registerPreviewTemplate(
+  'header',
+  wrapper(wrapDataComponent(HeaderTemplate))
+)
 
 CMS.registerPreviewTemplate('contact', wrapper(ContactTemplate))
 CMS.registerPreviewTemplate('contactSuccess', wrapper(ContactSuccessTemplate))

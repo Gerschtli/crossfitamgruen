@@ -59,10 +59,16 @@ const Layout = ({ children, title, description, isPreview }) => {
     <>
       <Normalize />
       <GlobalStyle />
-      {isPreview ? <></> : helmet}
-      <Header />
-      {children}
-      <Footer />
+      {isPreview ? (
+        children
+      ) : (
+        <>
+          {helmet}
+          <Header />
+          {children}
+          <Footer />
+        </>
+      )}
     </>
   )
 }

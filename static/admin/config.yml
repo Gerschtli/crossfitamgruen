@@ -1,4 +1,9 @@
 fields:
+  - &fieldDataKey
+    label: Data Key
+    name: dataKey
+    widget: hidden
+
   - &fieldTemplateKey
     label: Template Key
     name: templateKey
@@ -161,3 +166,22 @@ collections:
           - *fieldTitle
           - *fieldDescription
           - *fieldBody
+
+
+  - name: layout
+    label: General layout settings
+    description: Configure general settings and layout components.
+    files:
+      - file: src/data/header.yml
+        label: Header
+        name: header
+        fields:
+          - *fieldDataKey
+          - label: Header text main
+            name: headerMain
+            widget: string
+            required: true
+          - label: Header text small
+            name: headerSmall
+            widget: string
+            required: true

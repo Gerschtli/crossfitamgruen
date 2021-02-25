@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 import logo from '../../img/logo.svg'
 import { breakpoints, mediaQuery } from '../../util/breakpoints'
 import { colors } from '../../util/colors'
+import { normalizeDataInput } from '../../util/normalizer'
 
 const logoSize = 80
 
@@ -61,16 +62,33 @@ const StyledDesktopSuffix = styled.span`
   }
 `
 
-const Header = () => (
-  <StyledNavigation>
-    <StyledLogoLink to={'/'}>
-      <img src={logo} height={logoSize} width={logoSize} alt={'Logo'} />
-    </StyledLogoLink>
-    <StyledTitle>
-      <strong>CrossFit am Grün</strong>
-      <StyledDesktopSuffix>CrossFit / Community / Coaching</StyledDesktopSuffix>
-    </StyledTitle>
-  </StyledNavigation>
-)
+export const HeaderTemplate = ({ data, entry }) => {
+  const dataSet = normalizeDataInput(data, entry)
+
+  return (
+    <StyledNavigation>
+      <StyledLogoLink to={'/'}>
+        <img src={logo} height={logoSize} width={logoSize} alt={'Logo'} />
+      </StyledLogoLink>
+      <StyledTitle>
+        <strong>{dataSet.headerMain}</strong>
+        <StyledDesktopSuffix>{dataSet.headerSmall}</StyledDesktopSuffix>
+      </StyledTitle>
+    </StyledNavigation>
+  )
+}
+
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      dataYaml(dataKey: { eq: "header" }) {
+        headerMain
+        headerSmall
+      }
+    }
+  `)
+
+  return <HeaderTemplate data={data} />
+}
 
 export default Header
