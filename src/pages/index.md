@@ -1,5 +1,6 @@
 ---
 templateKey: index
+indexable: true
 link: /
 title: Startseite
 description: Description

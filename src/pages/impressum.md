@@ -1,5 +1,6 @@
 ---
 templateKey: imprint
+indexable: true
 link: /impressum/
 title: Impressum
 description: Description

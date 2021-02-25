@@ -1,5 +1,6 @@
 ---
 templateKey: contact
+indexable: true
 link: /kontakt/
 title: Kontakt
 description: Description

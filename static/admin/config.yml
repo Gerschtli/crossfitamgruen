@@ -9,6 +9,11 @@ fields:
     name: templateKey
     widget: hidden
 
+  - &fieldIndexable
+    label: Indexable
+    name: indexable
+    widget: hidden
+
   - &fieldLink
     label: Link
     name: link
@@ -67,6 +72,7 @@ collections:
         label: Homepage
         fields:
           - *fieldTemplateKey
+          - *fieldIndexable
           - *fieldLink
           - *fieldTitle
           - *fieldDescription
@@ -109,6 +115,7 @@ collections:
         name: schedule
         fields:
           - *fieldTemplateKey
+          - *fieldIndexable
           - *fieldLink
           - *fieldTitle
           - *fieldDescription
@@ -124,6 +131,7 @@ collections:
         name: contact
         fields:
           - *fieldTemplateKey
+          - *fieldIndexable
           - *fieldLink
           - *fieldTitle
           - *fieldDescription
@@ -138,6 +146,7 @@ collections:
         name: disclosure
         fields:
           - *fieldTemplateKey
+          - *fieldIndexable
           - *fieldLink
           - *fieldTitle
           - *fieldDescription
@@ -149,6 +158,7 @@ collections:
         name: imprint
         fields:
           - *fieldTemplateKey
+          - *fieldIndexable
           - *fieldLink
           - *fieldTitle
           - *fieldDescription
@@ -165,6 +175,7 @@ collections:
         name: notFound
         fields:
           - *fieldTemplateKey
+          - *fieldIndexable
           - *fieldTitle
           - *fieldDescription
           - *fieldBody
@@ -175,6 +186,7 @@ collections:
         name: contactSuccess
         fields:
           - *fieldTemplateKey
+          - *fieldIndexable
           - *fieldTitle
           - *fieldDescription
           - *fieldBody

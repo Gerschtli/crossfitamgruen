@@ -1,5 +1,6 @@
 ---
 templateKey: schedule
+indexable: true
 link: /stundenplan/
 title: Stundenplan
 description: Description

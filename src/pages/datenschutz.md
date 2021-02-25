@@ -1,5 +1,6 @@
 ---
 templateKey: disclosure
+indexable: true
 link: /datenschutz/
 title: Datenschutz
 description: Description

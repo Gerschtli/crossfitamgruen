@@ -1,5 +1,6 @@
 ---
 templateKey: contactSuccess
+indexable: false
 title: Kontaktanfrage versendet
 description: Description
 ---
