@@ -6,7 +6,7 @@ title: Startseite
 description: Description
 slider:
   - image: /img/slider1.jpg
-    text: Was sind wir alle super!
+    text: Die Seite ist umgezogen!
   - image: /img/slider2.jpg
     text: Noch ein Text
 infoBoxes:
