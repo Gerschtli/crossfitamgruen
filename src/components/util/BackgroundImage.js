@@ -1,15 +1,13 @@
 import React from 'react'
-import { default as ReactBackgroundImage } from 'gatsby-background-image'
+import { getImage } from 'gatsby-plugin-image'
+import { BgImage } from 'gbimage-bridge'
 
 const BackgroundImage = ({ className, image, children }) => {
-  if (image?.childImageSharp?.fluid) {
+  if (image?.childImageSharp?.gatsbyImageData) {
     return (
-      <ReactBackgroundImage
-        className={className}
-        fluid={image.childImageSharp.fluid}
-      >
+      <BgImage className={className} image={getImage(image)}>
         {children}
-      </ReactBackgroundImage>
+      </BgImage>
     )
   }
 

@@ -1,9 +1,14 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Image = ({ className, image, previewStyle }) => {
-  if (image?.childImageSharp?.fixed) {
-    return <Img className={className} fixed={image.childImageSharp.fixed} />
+  if (image?.childImageSharp?.gatsbyImageData) {
+    return (
+      <GatsbyImage
+        image={image.childImageSharp.gatsbyImageData}
+        className={className}
+      />
+    )
   }
 
   return <img className={className} src={image} alt={''} style={previewStyle} />

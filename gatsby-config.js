@@ -6,9 +6,7 @@ const settings = yaml.load(fileContents)
 
 module.exports = {
   flags: {
-    FAST_REFRESH: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
     // general
@@ -89,8 +87,9 @@ module.exports = {
     },
 
     // images
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
 
     // offline
     {
@@ -104,14 +103,16 @@ module.exports = {
               handler: `CacheFirst`,
             },
             {
-              urlPattern: /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
+              urlPattern:
+                /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
               handler: `NetworkFirst`,
               options: {
                 networkTimeoutSeconds: 5,
               },
             },
             {
-              urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+              urlPattern:
+                /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
               handler: `StaleWhileRevalidate`,
             },
             {
@@ -131,7 +132,6 @@ module.exports = {
     },
 
     // netlify
-    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

@@ -59,9 +59,12 @@ export const query = graphql`
       text
       image {
         childImageSharp {
-          fixed(quality: 90, width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(
+            quality: 90
+            width: 100
+            placeholder: NONE
+            layout: FIXED
+          )
         }
       }
     }
